@@ -1,0 +1,84 @@
+==Tinghuan Chen 
+
+~~~
+{}{img_left}{photos/bio.jpg}{alt text}{131}
+Ph.D Student\n 
+[http://www.cse.cuhk.edu.hk/v7/en/index.html Department of Computer Science and Engineering]\n
+[http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong  (CUHK)]\n
+Office: Rm 905, Ho Sin Hang Engineering Building \n
+Phone: \+852 6229 2349 \n
+Email: [thchen@cse.cuhk.edu.hk thchen\[@\]cse.cuhk.edu.hk] \n\n
+/“If you would go up high, then use your own legs! Do not get yourselves carried aloft; do not seat yourselves on other people's backs and heads!”/-Friedrich Nietzsche \n\n
+[./CV/TinghuanResume.pdf My Resume.] \n\n
+~~~
+
+
+
+
+
+== Biography
+I'm a Ph.D student at the [http://www.cse.cuhk.edu.hk/v7/en/index.html Department of Computer Science and Engineering], [http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong (CUHK)], under the supervision of [http://www.cse.cuhk.edu.hk/~byu/index.html Prof. Bei Yu] since Fall 2017. Previously, I received my M.Eng. and B.Eng. in Electronics Engineering from [http://www.seu.edu.cn Southeast University (SEU)] in 2017 and 2014, respectively.
+
+My research interests include Regression, Classification, Hardware Design for Numeric Calculation, Cyber-Physical Systems, Transform Code, Compressed Sensing and Machine Learning. 
+
+
+ 
+
+== Publications
+=== Journal papers
+. Zhifei Sun, *Tinghuan Chen*, You Tong and Meng Zhang. \"Blind Equalization of Constant Modulus Signals Based on Gaussian Process for Classification\". Wireless Personal Communications. 2017. 97(4):6005-6018.  
+. Chen Zhu, Huatao Zhao, *Tinghuan Chen* and Tianbo Zhu. \"A low latency and high efficient three-dimension Network-on-Chip based on hierarchical structure\". Modern Physics Letters B. Vol.31, no. 19-21, 2017, 1740061. 
+. *Tinghuan Chen*, Meng Zhang, Jianhui Wu, Chau Yuen and You Tong. \"Image Encryption and Compression based on Kronecker Compressed Sensing and Elementary Automata Scrambling\". Optics & Laser Technology, 2016, 84:118-133. 
+. Meng Zhang, *Tinghuan Chen*, Xuchao Shi and Peng Cao. \"Image Arbitrary-Ratio Down- and Up-Sampling Scheme Exploiting DCT Low Frequency Components and Sparsity in High Frequency Components\". IEICE Transactions on Information and Systems. Vol. E99-D, no.2, 2016, 475-487.
+=== Conference papers
+. *Tinghuan Chen*, Zhifang Dong. \"A New Method for the 3-D Discrete Hartley Transform\". 2012 Second International Conference on Instrumentation & Measurement, Computer, Communication and Control. 508-511
+
+== Experience
+=== Research Assistant | [https://dukekunshan.edu.cn Duke Kunshan University]
+- *Advisor:* [http://ece.duke.edu/faculty/xin-li Prof. Xin Li]
+- July.2017-Sep.2017, Kunshan, China
+
+=== Research Assistant | [http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong]
+- *Advisor:* [http://www.cse.cuhk.edu.hk/~byu/index.html Prof. Bei Yu]
+- Mar.2017-May.2017, N.T., Hong Kong
+
+
+== Teaching
+- Teaching Assistant: Spring 2018, [http://www.cse.cuhk.edu.hk/~byu/CENG3420/ CENG 3420 Computer Organization and Design]
+
+
+
+
+== Selected Awards
+
+
+
+
+~~~
+{}{table}{TABLENAME}
+The Chinese University of Hong Kong Postgraduate Scholarship  | 2017-2021 ||
+Postgraduate National Scholarship of China | 2016   ||
+Nan Rui Electric Scholarship   | 2016 ||
+Southeast University Outstanding Thesis | 2014 ||
+Honorable Mention of Mathematical Contest in Modeling | 2013 ||
+National Students Innovative Training Program (Grade: Outstanding) | 2013 ||
+National Endeavor Scholarship | 2012 ||
+Star-Net Scholarship | 2011 
+~~~
+
+
+== Paper Review
+- Integration, the VLSI Journal
+- The 28th edition of the ACM Great Lakes Symposium on VLSI (GLSVLSI)
+- Springer Book "Leveraging Big Data Techniques for Cyber-Physical Systems"
+- IET Cyber-Physical Systems: Theory & Applications 
+- KSII Transactions on Internet and Information Systems
+
+
+
+
+== Useful Guide
+- [./proj/deep_learning_acceleration/vivadoguide.txt Tcl scripts for Vivado]
+- [./proj/deep_learning_acceleration/NVDLA/guide.pdf Configuration for NVDLA in Linux Server]
+- [./proj/sensor_calibration/data.xlsx Sensor calibration test data]
+- [http://jemdoc.jaboc.net Jemdoc]

@@ -1,0 +1,399 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+% (c) 2011 Scott Clark <sc932@cornell.edu> http://cam.cornell.edu/~sc932
+%
+
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}%{ctexart}%{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{enumerate}
+\robustify\cftdotfill
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+%-----------------------------------------------------------
+%Margin setup
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{-0.25in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.75in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+%-----------------------------------------------------------
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+
+\textbf{{\Large Tinghuan Chen}} \\%& update:\textbf{\today} \\
+Ph.D student \\
+Rm 905, Ho Sin Hang Engineering Building\\
+The Chinese University of Hong Kong\\
+%\textbf{{\Large 陈廷欢}}\\
+%\texttt{plutochen1990@gmail.com} \\
+\texttt{thchen@cse.cuhk.edu.hk} \\
+%Telephone No.: (+86)-15298378576 \\
+ %Floor $4^{th}$ North, Run Run Shaw Science\&Technology Building, \\
+ %Southeast University, 2 Sipailou, Xuanwu District, Nanjing, Jiangsu Province, China\\
+% 江苏省南京市玄武区四牌楼2号东南大学逸夫科技馆北四楼
+%\texttt{@Chen} & Not looking for new job opportunities
+
+\end{tabular*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Research Interest}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{itemize}
+%\item Cyber-Physical Systems
+%\item Compressed Sensing
+%\item Machine Learning
+%\item High-level Synthesis
+%\end{itemize}
+Regression, Classification, High-level Synthesis, Cyber-Physical Systems, Transform Code, Compressed Sensing and Machine Learning
+%Computational Image Algorithm, Code Theory, Sparse Coding/Representation, $\ell_{0}$\&$\ell_{1}$ Norm Minimization, Filter (Kalman, Wiener), Super-Resolution/Image Up-Sampling, Neural Network and Machine Learning, Integer Transform. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Education}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item
+	\ressubheading{The Chinese University of Hong Kong}{Hong Kong}{}{2017 -- now}
+	\begin{itemize}
+		\resitem{Ph.D student}
+		\resitem{Department of Computer Science and Engineering}
+		%\resitem{School of Electronics Science \& Engineering}
+		%\resitem{GPA: 86}
+	\end{itemize}
+
+
+\item
+	\ressubheading{Southeast University}{Nanjing, China}{}{2014 -- 2017}
+	\begin{itemize}
+		\resitem{M.Eng., Circuits \& Systems}
+		\resitem{National ASIC Engineering Technology Research Center}
+		\resitem{School of Electronics Science \& Engineering}
+		%\resitem{GPA: 86}
+	\end{itemize}
+
+\item
+	\ressubheading{Southeast University}{Nanjing, China}{}{2011 -- 2014}
+	\begin{itemize}
+		\resitem{B.Eng. Electronics Science \& Technology}
+		\resitem{School of Electronics Science \& Engineering}
+		%\resitem{GPA: 87}
+	\end{itemize}
+
+\item
+	\ressubheading{Southeast University}{Nanjing, China}{}{2010 --  2011}
+	\begin{itemize}
+		\resitem{Computer Science \& Technology}
+		\resitem{School of Computer Science \& Engineering}
+		%\resitem{GPA:87}
+	\end{itemize}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\resheading{Professional Experience}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{itemize}
+
+%\item
+%	\ressubheading{Sparse Representation based on Machine Learning and Neural Networks}{}{Leader}{June 2016 -- May 2017}
+%	\begin{itemize}
+%	  \resitem{Natural Science Foundation of Jiangsu Province 2016 (Main Member)}
+%      \resitem{Sparse Signal Reconstruction}
+%      \resitem{Sparse Representation}
+%	\end{itemize}
+
+%\item
+%	\ressubheading{Compressed Sensing Theory \& Application}{}{Leader}{Jan 2015 -- June 2016}
+%	\begin{itemize}
+%			\resitem{Natural Science Foundation of Jiangsu Province 2016 (Main Member)}
+%            \resitem{Proposed the Image Encryption and Compression based on Kronecker Compressed Sensing and Elementary Automata Scrambling.}
+%            \resitem{Proposed the Arbitrary-Ratio Down- and Up-Sampling Scheme Exploiting DCT Low Frequency Components and Sparsity in High Frequency Components.}
+%            \resitem{FPGA algorithm verification: $8\times 8$ butterfly structure for 2-D block DCT transform; Parallel implementation for Elementary Automata Scrambling based on addressing.}
+            %\resitem{{\bf Recruiting:} Created, implemented, and directed \texttt{yelp.com/dataset\_challenge}, gave tech talks across the country, led events, gave hundreds of technical interviews, closed candidates.}
+%	\end{itemize}
+
+%\item
+%	\ressubheading{Graduation Thesis of Bachelor}{}{}{Dec 2013 -- June 2014}
+%	\begin{itemize}
+%    \resitem{Proposed a five-order cummulant reconstruction algorithm under compressed sampling.}
+%	\end{itemize}
+
+%\item
+%	\ressubheading{Mathematical Contest in Modeling(America)}{}{Team Member}{May 2013}
+%	\begin{itemize}
+%    \resitem{Set up a model that included the consideration of water transfer, storage and sustainable development to determine an optimal water strategy in China}
+%    \resitem{Used the Browns Linear Exponential Smoothing Method to predict the water demand; Employed Prim algorithm to obtain the network of transport water route in order to meet need of minimum transport price}
+%    \resitem{Evaluated peoples future attitude towards strategy by building a feedback model
+%based on Markov chain.}
+%	\end{itemize}
+
+%\item 
+%	\ressubheading{Student Research Training Program}{}{Team Member}{May 2012 -- May 2013}
+%	\begin{itemize}
+%    \resitem{Researched on controlling lamps by cellphones, based on Bluetooth technology;}
+%    \resitem{Designed and printed PCB.}
+%	\end{itemize}
+
+%\item
+%	\ressubheading{National Students Innovative Training Program}{}{Leader}{April 2012 -- April 2013}
+%	\begin{itemize}
+%		\resitem{Developed a fast algorithm of Three Dimension Discrete Hartley Transformation, based on a vector radix and the traditional butterfly structure.}
+%	\end{itemize}
+
+
+%\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Publications}
+\justifying
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}[(1)]
+
+\item Qi Sun, \textbf{Tinghuan Chen}, Jin Miao, Bei Yu, ``Power-Driven DNN Dataflow Optimization on FPGA". \textbf{IEEE/ACM International Conference on Computer-Aided Design (ICCAD)}, Westminster, CO, Nov. 4–7, 2019. (Invited Paper)
+
+\item \textbf{Tinghuan Chen}, Bingqing Lin, Hao Geng and Bei Yu. ``Sensor Drift Calibration via Spatial Correlation Model in Smart Building". \textbf{ACM/IEEE Design Automation Conference (DAC)}, Las Vegas, NV, June 2-6, 2019.
+
+\item Qianru Zhang, Meng Zhang, \textbf{Tinghuan Chen}, Zhifei Sun, Yuzhe Ma and Bei Yu. ``Recent advances in convolutional neural network acceleration". \textbf{Neurocomputing}, vol. 323, pp. 37-51, 2019.
+
+\item Qianru Zhang, Meng Zhang, \textbf{Tinghuan Chen}, Jinan Fan, Zhou Yang and Guoqing Li. ``Electricity Theft Detection Using Generative Models". \textbf{IEEE International Conference on Tools with Artificial Intelligence (ICTAI)}, Volos, Nov. 5-7, 2018.
+
+\item Zhifei Sun, \textbf{Tinghuan Chen}, You Tong and Meng Zhang. ``Blind Equalization of Constant Modulus Signals Based on Gaussian Process for Classification". \textbf{Wireless Personal Communications}. vol. 97, no. 4, pp. 6005-6018, 2017.
+
+\item Chen Zhu, Huatao Zhao, \textbf{Tinghuan Chen} and Tianbo Zhu. ``A low latency and high efficient three-dimension Network-on-Chip based on hierarchical structure". \textbf{Modern Physics Letters B}. vol. 31, no. 19-21, 1740061, 2017.
+
+\item \textbf{Tinghuan Chen}, Meng Zhang, Jianhui Wu, Chau Yuen and You Tong. ``Image Encryption and Compression based on Kronecker Compressed Sensing and Elementary Automata Scrambling". \textbf{Optics \& Laser Technology}, vol. 84, pp. 118-133, 2016.
+
+\item Meng Zhang, \textbf{Tinghuan Chen}, Xuchao Shi and Peng Cao. ``Image Arbitrary Ratio Down- and Up-Sampling Scheme Exploiting DCT Low Frequency Components and Sparsity in High Frequency Components". \textbf{IEICE Transactions on Information and Systems}. vol. E99-D, no. 2, pp. 475-487, 2016.
+
+
+\item \textbf{Tinghuan Chen}, Zhifang Dong. ``A New Method for the 3-D Discrete Hartley Transform". \textbf{IEEE International Conference on Instrumentation \& Measurement, Computer, Communication and Control}, Harbin, Dec. 8-10, 2012.
+
+
+
+
+
+
+%
+%
+%\item Qianru Zhang, Meng Zhang, \textbf{Tinghuan Chen}, Zhifei Sun, Yuzhe Ma and Bei Yu. Recent advances in convolutional neural network acceleration. \textbf{Neurocomputing}, 2019, 323:37-51.\\
+%
+%\item Qianru Zhang, Meng Zhang, \textbf{Tinghuan Chen}, Jinan Fan, Zhou Yang and Guoqing Li. Electricity Theft Detection Using Generative Models. \textbf{2018 IEEE 30th International Conference on Tools with Artificial Intelligence (ICTAI)}. 270-274.\\
+%
+%\item Zhifei Sun, {\bf Tinghuan Chen}*, You Tong and Meng Zhang. Blind Equalization of Constant Modulus Signals Based on Gaussian Process for Classification. \textbf{Wireless Personal Communications}. 2017. 97(4):6005-6018.\\
+%
+%\item Chen Zhu, Huatao Zhao, {\bf Tinghuan Chen} and Tianbo Zhu. A low latency and high efficient three-dimension Network-on-Chip based on hierarchical structure. \textbf{Modern Physics Letters B}.  Volume No.31, Issue No.19-21, 2017.\\
+%
+%\item {\bf Tinghuan Chen}, Meng Zhang, Jianhui Wu, Chau Yuen and You Tong. Image Encryption and Compression based on Kronecker Compressed Sensing and Elementary Automata Scrambling. \textbf{Optics \& Laser Technology}, 2016, 84:118-133.\\
+%
+%\item Meng Zhang, {\bf Tinghuan Chen}*, Xuchao Shi and Peng Cao. Image Arbitrary-Ratio Down- and Up-Sampling Scheme Exploiting DCT Low Frequency Components and Sparsity in High Frequency Components. \textbf{IEICE Transactions on Information and Systems}. Vol. E99-D, no.2, 2016, 475-487.\\
+%
+%\item {\bf Tinghuan Chen}, Zhifang Dong. A New Method for the 3-D Discrete Hartley Transform. \textbf{2012 Second International Conference on Instrumentation \& Measurement, Computer, Communication and Control}. 508-511\\
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\resheading{Patent}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%[1]Applied for a patent--a method of down-sampling, up-sampling and transmission for video frame. Patent application number: \emph{201510593694.9} and \emph{PCT/CN2016/073415}.\\
+
+%[2]Applied for a patent--A five-order cumulant estimation algorithm of compressed sampled signal. Patent application number: \emph{201410229504.0}.
+
+
+\resheading{Awards}
+
+\begin{itemize}
+
+\item {\bf Chinese University of Hong Kong Postgraduate Scholarship} \hfill{Aug. 2017}
+\item {\bf Postgraduate National Scholarship of China} \hfill{Nov. 2016}
+\item {\bf Nan Rui Electric Scholarship} \hfill{Jun. 2016}
+\item {\bf Master Student First Class Academic Scholarship} \hfill{Nov. 2014}
+\item {\bf Southeast University Outstanding Thesis} (6/187) \hfill{Jun. 2014}
+\item {\bf Honorable Mention of Mathematical Contest in Modeling} \hfill{May. 2013}
+\item {\bf National Students Innovative Training Program} (Grade: Outstanding) \hfill{Oct. 2013}
+\item {\bf National Endeavor Scholarship} \hfill{Nov. 2012}
+
+\end{itemize}
+
+
+
+%\resheading{Presentations and Visiting}
+
+%\begin{itemize}
+
+%\item {\bf Poster at IEEE International Workshop on Design Automation for Cyber-Physical Systems (DACPS 2017), Austin, TX, America.} \hfill{18 June 2017}
+%\item {\bf Visited Daiichi Institute of Technology, Japan.} \hfill{Oct. 2013}
+%\item {\bf Presented at Southeast University Anniversary Academic Colloquium} \hfill{May. 2013}
+%\item {\bf presented at 2012 Second International Conference on Instrumentation \& Measurement, Computer, Communication and Control (in English)}  \hfill{Dec. 2012}
+
+%\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Intern}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item
+	\ressubheading{Research Assistant}{Duke Kunshan University}{}{July. 2017-Sep.2017}
+	\begin{itemize}
+      %\resitem{the Department of Electrical and Computer Engineering}
+      \resitem{Instructor: \href{http://ece.duke.edu/faculty/xin-li}{Xin Li}}
+	\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+
+\item
+	\ressubheading{Research Assistant}{The Chinese University of Hong Kong}{}{Mar. 2017-May. 2017}
+	\begin{itemize}
+      \resitem{the Department of Computer Science and Engineering}
+      \resitem{Instructor: \href{http://www.cse.cuhk.edu.hk/~byu/}{Bei Yu}}
+	\end{itemize}
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\resheading{Teaching Experience}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{itemize}
+
+%\item
+%	\ressubheading{Teaching Assistant}{Southeast University}{}{Fall Semester, 2015}
+%	\begin{itemize}
+%      \resitem{Matlab Experiment}
+%      \resitem{Instructor: Zhifang Dong, Ph.D}
+%	\end{itemize}
+%\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\resheading{Professional Services}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{itemize}
+%\item {\bf 2017 IEEE Biomedical Circuits \& Systems Conference} \hfill{2017}
+%\item {\bf IET Cyber-Physical Systems: Theory \& Applications} \hfill{2017}
+%\item {\bf KSII Transactions on Internet and Information Systems} \hfill{2016}
+%\item {\bf TELKOMNIKA Telecommunication, Computing, Electronics and Control} \hfill{2016}
+
+%\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Professional Skill}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+%\item {\bf English:} 
+%	\begin{itemize}
+%      \resitem{CET-4:492}
+%      \resitem{CET-6:441}
+%      \resitem{TOEFL:84 (Reading: 23; Listening: 20; Speaking: 17; Writing: 24)}
+%	\end{itemize}
+\item {\bf Hardware:} Verilog HDL, High-level Synthesis.\\
+\item {\bf Software:} MATLAB, C++, Python, C, Tcl.
+
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\resheading{Referees}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%[1] LI Yonghui, Professor, \\
+%School of Electrical and Information Engineering, \\
+%The University of Sydney \\
+%\texttt{yonghui.li@sydney.edu.au} \\
+
+%[1] YU Bei, Assistant Professor, \\
+%Department of Computer Science and Engineering, \\
+%The Chinese University of Hong Kong \\
+%\texttt{byu@cse.cuhk.edu.hk } \\
+
+%[2] DONG Zhifang, Associate Professor, \\
+%School of Electronics Science and Engineering, \\
+%Southeast University\\
+%\texttt{dongzhifang@seu.edu.cn}\\
+
+
+
+
+
+
+\end{document}

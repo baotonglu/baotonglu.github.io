@@ -1,0 +1,76 @@
+This guide for CSE CUHK server
+ref: http://nvdla.org/
+Acknowledge: Yuzhe Ma helps me find synopsys tools in CSE CUHK server
+
+I use linux9 to run this code
+
+# Environment Setup
+
+= Java - jdk1.7 (installed in "/usr/bin/java")
+= Perl - perl-5.10 (installed in "/usr/bin/perl")
+	XML::Simple
+	Capture::Tiny
+= CPP - gcc-4.9.3 (installed in "/usr/bin/g++"")
+= CPP (installed in "/usr/bin/cpp")
+= Python - python2.6 (installed in "/usr/bin/python")
+= SystemC - systemc-2.3.0 (need to be installed, by "./configure --prefix" to install in local)
+= (for Verilator builds) Verilator - Verilator 3.912 (need to be installed, by "./configure --prefix" to install in local)
+= (for Verilator builds) clang - clang 3.4 (installed in "/usr/bin/clang" in linux2-4)
+
+Additional tools: 
+= cpan (installed, however you have to configurate installation in local dir and collect all add URL:https://metacpan.org: 
+= IO::Tee (run cpan IO::Tee to install)
+= VCS (installed in "/opt2/synopsys/vcs-F-2011.12/bin")
+= Verdi (installed in "/opt2/synopsys/verdi/Verdi_M-2017.03-SP2-2/bin")
+
+You neer add path variables in .cshrc file
+set path=($path /opt2/synopsys/vcs-F-2011.12/bin)
+set path=($path /opt2/synopsys/verdi/Verdi_M-2017.03-SP2-2/bin)
+
+PROJ = nv_small, nv_large, nv_full
+
+
+# Tree Build
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+= Revise the Makefile in hw root:
+  .DEFAULT_CPP  :=  /usr/bin/cpp
+  .DEFAULT_GCC  :=  /research/byu1/thchen/tools/gcc4.9.3/bin/g++
+  .DEFAULT_PERL :=  /usr/bin/perl
+  .DEFAULT_JAVA := /usr/bin/java
+  .DEFAULT_SYSTEMC := /uac/gds/thchen/systemc/
+  .DEFAULT_VERILATOR := /research/byu1/thchen/tools/verilator-3.9.12/bin/verilator
+  .DEFAULT_CLANG  := /research/byu1/thchen/tools/build/bin/clang
+
+= Revise the Makefile in hw-root/verif/sim/
+  .export VCS_HOMW    := /opt2/synopsys/vcs-F-2011.12
+  .export VERDI_HOME  := /opt2/synopsys/verdi/Verdi_M-2017.03-SP2-2
+  .export NOVAS_HOME  := /opt2/synopsys/verdi/Verdi_M-2017.03-SP2-2
+  .export LM_LICENSE_FILE  := /opt2/synopsys/key
+  .export VCS_CC      := /usr/bin/g++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+= make
+
+
+Attend that you should revise path for VCS, Verdi, VCS_LICENCE，VCS_CC in Makefile, where 
+VCS license is localed in "/opt2/synopsys/key"
+
+= ./tools/bin/tmake -build vmod
+= ./tools/bin/tmake -build verif_sim
+
+If building the Virtual Platform, or another application that uses the NVDLA Cmodel, the following command will build it and install it into outdir/nv_full/cmod/release:
+
+= ./tools/bin/tmake -build cmod_top
+
+Revise add "-I /usr/include/c++/4.8.2/x86_64-redhat-linux" into verilator/include/NVNnvdla.mk
+-DVL_PRINTF=printf
+-DVM_COVERAGE=0
+
+
+
+# Synthesis
+= Synopsys tool: DC: /opt2/synopsys/syn-J-2014.09-SP5-6/bin
+
+

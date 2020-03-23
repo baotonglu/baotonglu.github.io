@@ -1,0 +1,221 @@
+# jemdoc: addcss{css/jemdoc.css}
+# jemdoc: addcss{css/myMiddle.css}
+# jemdoc: title{[Spring 2018] CENG3420}
+
+{{<center>}}
+~~~
+{}{img_left}{./img/slogan.jpg}{CENG4480 slogan}{style="width: 100%"}{}{}
+~~~
+
+== CENG3420 Computer Organization and Design -- Spring 2018
+{{</center>}}
+
+\n
+~~~
+{}{table}{noborder}
+*Lecture/Tutorial*:   | W10:30-12:15                                         | Venue: [http://www.avsu.cuhk.edu.hk/ci/detail-lsk-302.html LSK 302] ||
+                      | H15:30-17:15                                         | Venue: [http://www.avsu.cuhk.edu.hk/ci/detail-lsb-c2.html LSB C2]   ||
+*Course Instructor*:  | [http://www.cse.cuhk.edu.hk/~byu/ Prof. Bei Yu]      | [mailto:byu@cse.cuhk.edu.hk byu@cse.cuhk.edu.hk]                    ||
+*Course Tutors*:      | [http://appsrv.cse.cuhk.edu.hk/~hyyang/ Haoyu Yang]  | [mailto:hyyang@cse.cuhk.edu.hk hyyang@cse.cuhk.edu.hk]              ||
+                      | [https://plutochen1990.github.io/ Tinghuan Chen]     | [mailto:thchen@cse.cuhk.edu.hk thchen@cse.cuhk.edu.hk]              ||
+*Consultation Hours:* | {{<font color=blue>}}H13:30--15:30@SHB914{{</font>}} | ||
+*Tutor Hours:*        | {{<font color=blue>}}M15:30--17:30@SHB913{{</font>}} |
+~~~
+
+\n
+- [http://www.cuhk.edu.hk/policy/academichonesty/ Honesty in Academic Work]
+- [http://www.cse.cuhk.edu.hk/~byu/doc/student-teacher-expectations.pdf Staff Student Expectations]
+- [http://www.cse.cuhk.edu.hk/~byu/doc/absence.pdf About Absence in mid-term or quiz]
+
+=== Announcements
+~~~
+- Mar. 07, 2018: [doc/midterm.pdf Midterm] is posted.
+- Mar. 05, 2018: To help you prepare midterm, solutions to L08 \& L09 in-class exercises are posted.
+- Feb. 25, 2018: [doc/HW2.pdf Homework 2] is posted, which is due on Mar. 06. Please submit the electronic version to blackboard.
+- Feb. 23, 2018: Schedule is slightly update: we will finish MIPS part, before jumping into LC-3 part (from March 15).
+- Feb. 21, 2018: [doc/HW1-sol.pdf HW1 Solution] is posted.
+- Jan. 23, 2018: [doc/HW1.pdf Homework 1] is posted, which is due on Feb. 04. Please submit the electronic version to blackboard.
+- Dec. 06, 2017: Course webpage is built up and the teaching schedule is online.
+~~~
+
+=== Description:
+This course provides an introduction to computer organization.
+The objective is to introduce the major components of a computer system, how they function together in executing a program,
+and the organizational paradigms that determine the capabilities, performance and power of computer systems.
+
+=== Course Requirements:
+- Class Attendance (5\%), Homeworks (15\%), Midterm (15\%), Three Labs (25\%), Final Exam (40\%).
+- A student must gain at least *50\%* of the full marks in order to pass the course.
+- A student must attend at least *80\%* of lectures in order to gain all class attendance credits.
+
+=== Textbook:
+- \[1\] Computer Organization and Design: The Hardware/Software Interface, 5th Edition
+  ([http://www.amazon.com/Computer-Organization-Design-Fifth-Edition/dp/0124077269 amazon.com])
+  ([http://www.amazon.cn/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1-%E7%A1%AC%E4%BB%B6-%E8%BD%AF%E4%BB%B6%E6%8E%A5%E5%8F%A3-%E5%B8%95%E7%89%B9%E6%A3%AE/dp/B00IHQBOX6/ amazon.cn])
+
+=== References:
+- \[2\] Introduction to Computing Systems: From bits & gates to C & beyond, 2nd Edition
+  ([http://www.amazon.com/Introduction-Computing-Systems-gates-beyond/dp/0072467509/ amazon.com])
+  ([http://www.amazon.cn/gp/product/B0011BVLB4?psc=1&ref_=oh_aui_detailpage_o01_s00 amazon.cn])
+
+- \[3\] Computer Architecture: A Quantitative Approach, 5th Edition
+  ([http://www.amazon.com/Computer-Architecture-Fifth-Edition-Quantitative/dp/012383872X amazon.com])
+  ([http://www.amazon.cn/%E7%BB%8F%E5%85%B8%E5%8E%9F%E7%89%88%E4%B9%A6%E5%BA%93-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95-%E4%BA%A8%E5%B0%BC%E8%A5%BF/dp/B006LBPKGG/ref=sr_1_2?ie=UTF8&qid=1458556324&sr=8-2&keywords=Computer+Architecture%2C+Fifth+Edition amazon.cn])
+- Lab 1 reference: \[1\] Appendix B, [https://sourceforge.net/projects/spimsimulator/files/ SPIM simulator]
+- Lab 2 reference: [./doc/LC-3b-ISA.pdf LC-3b-ISA], [./doc/LC-3b-assembly.pdf LC-3b-assembly]
+- Lab 3 reference: [./doc/LC-3b-datapath.pdf LC-3b-datapath]
+- [http://www.cse.cuhk.edu.hk/~byu/doc/windows2server.pdf How to access Linux server from Windows]
+
+=== Lecture Notes and tutorials
+~~~
+{}{table}{noborder-mid}
+*Week* | *Date*   |  *Topic*                                                          | *Remark*   ||
+1      | Jan. 10  
+       | L01 Introduction ([./slides/L01-intro.pdf slides])                      
+       |                           
+       ||
+       | Jan. 11  
+       | L02 Digital Logic Review ([./slides/L02-logic.pdf slides])              
+       |  
+       ||
+2      | Jan. 17  
+       | L03 ISA ([./slides/L03-ISA.pdf slides], [./doc/MIPS-cheat-sheet.pdf MIPS-cheatsheet])
+       | \[1\] Sec.2.1--2.10 
+       ||
+       | Jan. 18  
+       | L04 Performance ([./slides/L04-performance.pdf slides], [./slides/L04-quiz-sol.pdf quiz-solution])                 
+       | \[1\] Sec.1.4 
+       ||
+3      | Jan. 24  
+       | L05 Arithmetic and Logic Unit ([./slides/L05-ALU.pdf slides])           
+       | \[1\] Sec.3.1--3.5 
+       ||
+       | Jan. 25  
+       | L06 Datapath ([./slides/L06-datapath.pdf slides])                       
+       | \[1\] Sec.4.1--4.4
+       ||
+4      | Jan. 31  
+       | L07 Pipeline ([./slides/L07-ppl.pdf slides])                            
+       | \[1\] Sec.4.5--4.9 
+       ||
+       | Feb. 01  
+       | {{<font color=blue>}}Lab 1-1{{</font>}} ([./slides/lab1-1.pdf slides])  
+       |  
+       ||
+5      | Feb. 07  
+       | {{<font color=blue>}}Lab 1-2{{</font>}} ([./slides/lab1-2.pdf slides])  
+       |                           
+       ||
+       | Feb. 08  
+       | {{<font color=blue>}}Lab 1-3{{</font>}} ([./slides/lab1-3.pdf slides])  
+       |                           
+       || #DAC-TPC
+6      | Feb. 14  
+       | L08 Memory ([./slides/L08-memory.pdf slides], [./slides/L08-quiz-sol.pdf quiz-solution])                           
+       | \[1\] Sec.5.1--5.3, 5.7 
+       ||
+       | Feb. 15  
+       | n\/a                                                             
+       | \<font color=green\>Lunar New Year Holiday\<\/font\> 
+       ||
+7      | Feb. 21  
+       | n\/a                                                             
+       | \<font color=green\>Lunar New Year Holiday\<\/font\> 
+       ||
+       | Feb. 22  
+       | L09 Cache ([./slides/L09-cache.pdf slides], [./slides/L09-quiz-sol.pdf quiz-solution])                             
+       | \[1\] Sec.5.4--5.5 
+       ||
+8      | Feb. 28  
+       | Continue on Memory and Cache
+       |
+       ||
+       | Mar. 01  
+       | L10 Virtual Memory ([./slides/L10-vm.pdf slides])                       
+       | 
+       ||
+9      | Mar. 07  
+       | {{<font color=red>}}*Midterm*{{</font>}}
+       | \<font color=red\>covering L03 -- L09\<\/font\>
+       ||
+       | Mar. 08  
+       | L11 I\/O Systems ([./slides/L11-IO.pdf slides])                         
+       | \[1\] Sec.6.1--6.6 
+       ||
+10     | Mar. 14  
+       | L12 Instruction-Level Parallelism ([./slides/L12-ILP.pdf slides])       
+       |                           
+       ||
+       | Mar. 15  
+       | L13 Multi-Threading & Multi-Core ([./slides/L13-MCore.pdf slides])      
+       | \[1\] Sec.7.1--7.6 
+       #| L10 LC-3 Introduction ([./slides/L10-lc3.pdf slides])                             
+       ||
+11     | Mar. 21  
+       | {{<font color=blue>}}Lab 2-1{{</font>}} ([./slides/lab2-1.pdf slides])  
+       | #[./lab2-assignment.tar.gz lab2-assignment.tar.gz], [./toupper2.cod toupper2.cod] 
+       ||
+       | Mar. 22  # Beijing trip
+       | {{<font color=blue>}}Lab 2-2{{</font>}} ([./slides/lab2-2.pdf slides])  
+       |  
+       || 
+12     | Mar. 28  
+       | {{<font color=blue>}}Lab 2-3{{</font>}} ([./slides/lab2-3.pdf slides])  
+       |
+       || #ISPD
+       | Mar. 29  
+       | n\/a                                                             
+       | \<font color=green\>Reading Week\<\/font\> 
+       || #ISPD
+13     | Apr. 04  
+       | n\/a                                                             
+       | \<font color=green\>Reading Week\<\/font\> 
+       ||
+       | Apr. 05  
+       | n\/a                                                             
+       | \<font color=green\>Ching Ming Festival\<\/font\> 
+       ||
+14     | Apr. 11  
+       | {{<font color=blue>}}Lab 3-1{{</font>}} ([./slides/lab3-1.pdf slides])  
+       | #[./lab3-assign.tar.gz lab3-assign.tar.gz], [./lib3-gcc4.8.tar.gz lib3-gcc4.8.tar.gz]
+       ||
+       | Apr. 12  
+       | {{<font color=blue>}}Lab 3-2{{</font>}} ([./slides/lab3-2.pdf slides])  
+       |  
+       ||
+15     | Apr. 18  
+       | {{<font color=blue>}}Lab 3-3{{</font>}} ([./slides/lab3-3.pdf slides])  
+       |  
+       ||
+       | Apr. 19  
+       | Lecture \& Homework Review                                                  
+       |                           
+~~~
+
+
+=== Homework / Quiz Sets
+~~~
+Please submit your homework through {{<font color=red>}}blackboard{{</font>}} ([https://blackboard.cuhk.edu.hk/ link]). Late submission is subject to a penalty.
+~~~
+
+- [./doc/HW1.pdf Homework 1] (due on Feb. 04), [./doc/HW1-sol.pdf HW1 Solution]
+- [./doc/HW2.pdf Homework 2] (due on Mar. 06) #, [./doc/HW1-sol.pdf HW1 Solution]
+- [./doc/midterm.pdf Midterm]
+
+#- [./HW3.pdf Homework 3] (due on Apr. 23), [./HW3-solution.pdf HW3 Solution]
+#- [./HW2-update.pdf Homework 2 (update)] (due on Mar. 29), [./HW2-solution.pdf HW2 Solution]
+#- [./HW1-update.pdf Homework 1 (update)] (due on Feb. 23), [./HW1-solution.pdf HW1 Solution]
+#- \<del\>[./HW2.pdf Homework 2] (due on Mar. 29)\<\del\>
+#- \<del\>[./HW1.pdf Homework 1] (due on Feb. 23)\<\del\>
+#- Reference 1: [./2016S-quiz1.pdf 2016S-Quiz-1]
+#- Reference 2: [./2016S-quiz2.pdf 2016S-Quiz-2]
+#- Reference 3: [./2016S-final.pdf 2016S-final]
+#- Reference 4: [./2017S-midterm.pdf 2017S-midterm]
+
+\n
+=== Important Dates
+- *Apr. 26, 2018*: *\<font color=red\>Final Exam.\</font\> University Gymnasium, 12:30--14:30.*
+#- *Mar. 02, 2017*: Midterm.
+#- *Apr. 26, 2017*: Final 12:30--14:30, @Sir Run Run Shaw Hall.
+
+

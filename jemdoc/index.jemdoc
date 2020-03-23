@@ -1,0 +1,104 @@
+# jemdoc: addcss{css/jemdoc.css}
+# jemdoc: addcss{css/myMiddle.css}
+# jemdoc: title{Tinghuan Chen@CUHK}
+
+#==Tinghuan Chen 
+
+~~~
+{}{img_left}{photos/bio.jpg}{alt text}{131}
+== Tinghuan Chen
+
+Ph.D Student\n 
+[http://www.cse.cuhk.edu.hk/v7/en/index.html Department of Computer Science and Engineering]\n
+[http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong  (CUHK)]\n
+Office: Rm 905, Ho Sin Hang Engineering Building \n
+Phone: \+852 6229 2349 \n
+Email: [thchen@cse.cuhk.edu.hk thchen\[@\]cse.cuhk.edu.hk] \n\n
+[./CV/TinghuanResume.pdf My CV.] \n\n
+~~~
+
+#{{<div align="right">}}
+#/"If you would go up high, then use your own legs! Do not get yourselves carried aloft; do not seat yourselves on other people's backs and heads!"/ - Friedrich Nietzsche \n\n
+#{{</div>}}
+
+
+
+
+== Biography
+I'm a Ph.D student at the [http://www.cse.cuhk.edu.hk/v7/en/index.html Department of Computer Science and Engineering], [http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong (CUHK)], under the supervision of [http://www.cse.cuhk.edu.hk/~byu/index.html Prof. Bei Yu] since Fall 2017. Previously, I received my M.Eng. and B.Eng. in Electronics Engineering from [http://www.seu.edu.cn Southeast University (SEU)] in 2017 and 2014, respectively.
+
+My research interests include High Level Synthesis, Cyber-Physical Systems, Transform Code, Compressed Sensing and Machine Learning. 
+
+
+ 
+
+== Publications
+=== Journal papers
+. Qianru Zhang, Meng Zhang, *Tinghuan Chen*, Zhifei Sun, Yuzhe Ma and Bei Yu. \"Recent advances in convolutional neural network acceleration\". Neurocomputing, vol. 323, pp. 37-51, 2019. 
+. Zhifei Sun, *Tinghuan Chen*, You Tong and Meng Zhang. \"Blind Equalization of Constant Modulus Signals Based on Gaussian Process for Classification\". Wireless Personal Communications. vol. 97, no. 4, pp. 6005-6018, 2017.  
+. Chen Zhu, Huatao Zhao, *Tinghuan Chen* and Tianbo Zhu. \"A low latency and high efficient three-dimension Network-on-Chip based on hierarchical structure\". Modern Physics Letters B. Vol. 31, no. 19-21, 1740061, 2017. 
+. *Tinghuan Chen*, Meng Zhang, Jianhui Wu, Chau Yuen and You Tong. \"Image Encryption and Compression based on Kronecker Compressed Sensing and Elementary Automata Scrambling\". Optics & Laser Technology, vol. 84, pp. 118-133, 2016. 
+. Meng Zhang, *Tinghuan Chen*, Xuchao Shi and Peng Cao. \"Image Arbitrary-Ratio Down- and Up-Sampling Scheme Exploiting DCT Low Frequency Components and Sparsity in High Frequency Components\". IEICE Transactions on Information and Systems. vol. E99-D, no. 2, pp. 475-487, 2016.
+
+=== Conference papers
+. Qi Sun, *Tinghuan Chen*, Jin Miao, Bei Yu, \"Power-Driven DNN Dataflow Optimization on FPGA\", IEEE/ACM International Conference on Computer-Aided Design (ICCAD), Westminster, CO, Nov. 4–7, 2019. (Invited Paper)
+. *Tinghuan Chen*, Bingqing Lin, Hao Geng and Bei Yu. \"Sensor Drift Calibration via Spatial Correlation Model in Smart Building\". ACM/IEEE Design Automation Conference (DAC), Las Vegas, NV, June 2-6, 2019.
+. Qianru Zhang, Meng Zhang, *Tinghuan Chen*, Jinan Fan, Zhou Yang and Guoqing Li. \"Electricity Theft Detection Using Generative Models\". IEEE International Conference on Tools with Artificial Intelligence (ICTAI), Volos, Nov. 5-7, 2018.
+. *Tinghuan Chen*, Zhifang Dong. \"A New Method for the 3-D Discrete Hartley Transform\". IEEE International Conference on Instrumentation & Measurement, Computer, Communication and Control, Harbin, Dec. 8-10, 2012.
+
+== Experience
+=== Research Assistant | [https://dukekunshan.edu.cn Duke Kunshan University]
+- *Advisor:* [http://ece.duke.edu/faculty/xin-li Prof. Xin Li]
+- July.2017-Sep.2017, Kunshan, China
+
+=== Research Assistant | [http://www.cuhk.edu.hk/english/index.html The Chinese University of Hong Kong]
+- *Advisor:* [http://www.cse.cuhk.edu.hk/~byu/index.html Prof. Bei Yu]
+- Mar.2017-May.2017, N.T., Hong Kong
+
+
+== Teaching Assistant
+- Spring 2020, [http://www.cse.cuhk.edu.hk/~mcyang/ceng3430/2020S/ceng3430.html CENG3430 Rapid Prototyping of Digital Systems]
+- Fall 2019, [http://www.cse.cuhk.edu.hk/~byu/CENG4480/2019Fall/index.html CENG4480 Embedded System Development and Applications]
+- Spring 2019, [http://www.cse.cuhk.edu.hk/~mcyang/ceng3430/2019S/ceng3430.html CENG3430 Rapid Prototyping of Digital Systems]
+- Spring 2018, [http://www.cse.cuhk.edu.hk/~byu/CENG3420/ CENG 3420 Computer Organization and Design]
+
+
+
+
+== Selected Awards
+
+~~~
+{}{table}{noborder}
+The Chinese University of Hong Kong Postgraduate Scholarship  | 2017-2021 ||
+Postgraduate National Scholarship of China | 2016   ||
+Nan Rui Electric Scholarship   | 2016 ||
+Southeast University Outstanding Thesis | 2014 ||
+#Honorable Mention of Mathematical Contest in Modeling | 2013 ||
+National Students Innovative Training Program (Grade: Outstanding) | 2013 ||
+#National Endeavor Scholarship | 2012 ||
+Star-Net Scholarship | 2011 
+~~~
+
+
+== Paper Review
+- IET Electronics Letters
+- Neurocomputing
+- 2019 ACM/IEEE Design Automation Conference (DAC)
+- 2019 ACM International Symposium on Physical Design (ISPD)
+- IEEE Systems Journal
+- Integration, the VLSI Journal
+- IEEE Access
+- The 28th edition of the ACM Great Lakes Symposium on VLSI (GLSVLSI)
+#- Springer Book "Leveraging Big Data Techniques for Cyber-Physical Systems"
+- IET Cyber-Physical Systems: Theory & Applications 
+- KSII Transactions on Internet and Information Systems
+
+
+
+
+== Useful Guide
+- [./proj/deep_learning_acceleration/vivadoguide.txt Tcl scripts for Vivado]
+- High Level Synthesis
+#- [./proj/deep_learning_acceleration/NVDLA/guide.pdf Configuration for NVDLA in Linux Server]
+#- [./proj/sensor_calibration/data.xlsx Sensor calibration test data]
+- [http://jemdoc.jaboc.net Jemdoc]
