@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RetroInfer: A Vector-Storage Approach for Scalable Long-Context LLM Inference</title>
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./static/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        p {
+            /* font-family: 'Times New Roman', Times, serif; */
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            /* font-family: 'Lato', Verdana, Helvetica, sans-serif; */
+            font-size: 15px;
+        }
+
+        .publication-authors a {
+            color: #337ab7 !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">RetroInfer: A <strong>
+                                <font color="brown">Vector-Storage Approach</font>
+                            </strong> for Scalable Long-Context LLM Inference</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a target="_blank" href="">
+                                    Yaoqi&#160;Chen<sup>&dagger;</sup></a>,
+                                <a target="_blank" href="">
+                                    Jinkai&#160;Zhang<sup>&loz;</sup></a>,
+                                <a target="_blank" href="https://baotonglu.github.io/">
+                                    Baotong&#160;Lu<sup>&#9993;</sup></a>,
+                                <a target="_blank" href="https://www.microsoft.com/en-us/research/people/qiazh/">
+                                    Qianxi&#160;Zhang</a>,
+                                <a target="_blank" href="https://www.microsoft.com/en-us/research/people/chengzhang/">
+                                    Chengruidong&#160;Zhang</a>,
+                                <a target="_blank" href="">
+                                    Jingjia&#160;Luo<sup>&Dagger;</sup></a>,
+                                <a target="_blank" href="">
+                                    Di&#160;Liu<sup>&diams;</sup></a>,<br />
+                                <a target="_blank" href="https://hqjiang.com/">
+                                    Huiqiang&#160;Jiang</a>,
+                                <a target="_blank" href="https://www.microsoft.com/en-us/research/people/cheqi/">
+                                    Qi&#160;Chen</a>,
+                                <a target="_blank" href="https://jingliu.xyz/">
+                                    Jing&#160;Liu</a>,
+                                <a target="_blank" href="https://www.microsoft.com/en-us/research/people/badin/">
+                                    Bailu&#160;Ding</a>,
+                                <a target="_blank" href="">
+                                    Xiao&#160;Yan<sup>&loz;</sup></a>,
+                                <a target="_blank" href="">
+                                    Jiawei&#160;Jiang<sup>&loz;</sup></a>,
+                                <a target="_blank" href="">
+                                    Chen&#160;Chen<sup>&diams;</sup></a>,<br />
+                                <a target="_blank" href="https://madsys.cs.tsinghua.edu.cn/~zhangmx/">
+                                    Mingxing&#160;Zhang<sup>&Dagger;</sup></a>,
+                                <a target="_blank" href="https://www.microsoft.com/en-us/research/people/yuqyang/">
+                                    Yuqing&#160;Yang</a>,
+                                <a target="_blank" href="https://www.microsoft.com/en-us/research/people/fanyang/">
+                                    Fan&#160;Yang</a>,
+                                <a target="_blank" href="https://www.microsoft.com/en-us/research/people/maoyang/">
+                                    Mao&#160;Yang</a>,
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Microsoft Research</span>, <span
+                                class="author-block"><sup>&dagger;</sup>University of Science and Technology of
+                                China</span>,
+                            <span class="author-block"><sup>&loz;</sup>Wuhan University</span>, <span
+                                class="author-block"><sup>&Dagger;</sup>Tsinghua University</span>,
+                            <span class="author-block"><sup>&diams;</sup>Shanghai Jiao Tong University</span>,
+
+                        </div>
+                        <div class="is-size-5 publication-authors">
+
+                            <span class="author-block">
+                                baotonglu@microsoft.com
+                            </span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+
+                                <span class="link-block">
+                                    <a target="_blank" href="https://github.com/microsoft/RetrievalAttention"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a target="_blank" href="https://arxiv.org/abs/2505.02922"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a target="_blank" href="https://huggingface.co/papers/2505.02922"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fa fa-desktop"></i>
+                                        </span>
+                                        <span>HF Demo</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-widescreen">
+            <div class="columns is-left">
+                <div class="rows is-left ">
+                    <div class="row is-full-width">
+                        <h3 class="title is-3" style="padding: 50px  0 0;"><span class="dvima">News</span></h3>
+                        <ol>
+                            <li>
+                                <p><b>🧩</b> &#160;[25/05/05]&#160;We have released our paper on arXiv: <font
+                                        color="#337ab7"><b><a href="https://arxiv.org/pdf/2505.02922"
+                                                target="_blank">RetroInfer: A Vector-Storage Approach for Scalable
+                                                Long-Context LLM
+                                                Inference</a></b></font>.
+                        </ol>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </section>
+
+
+    <section class="section" style="font-family: sans-serif;">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column">
+                    <h3 class="title is-3" style="padding: 0px 0 0 0;">Abstract</h3>
+                    <div class="content has-text-justified">
+                        <p style="font-size: 100%">
+                            The growing context lengths of large language models (LLMs) pose significant challenges for
+                            efficient inference, primarily due to GPU memory and bandwidth constraints. We present
+                            RetroInfer, <font color="#337ab7"><b>a novel system that reconceptualizes the key-value (KV)
+                                    cache as a vector storage system</b></font> which exploits the inherent attention
+                            sparsity to accelerate long-context LLM inference.
+                            At its core is the <font color="#337ab7"><b>wave index</b></font>, an Attention-aWare VEctor
+                            index that enables efficient and accurate retrieval of critical tokens through techniques
+                            such as <font color="#337ab7"><b>tripartite attention approximation, accuracy-bounded
+                                    attention estimation, and segmented clustering</b></font>. Complementing this is the
+                            wave buffer, which coordinates KV cache placement and overlaps computation and data transfer
+                            across GPU and CPU to sustain high throughput.
+                            Unlike prior sparsity-based methods that struggle with token selection and hardware
+                            coordination, RetroInfer delivers robust performance without compromising model accuracy.
+                            Experiments on long-context benchmarks show up to <font color="#337ab7"><b>4.5X</b></font>
+                            speedup over full attention within GPU memory limits and up to <font color="#337ab7">
+                                <b>10.5X</b>
+                            </font> over sparse attention baselines when KV cache is extended to CPU
+                            memory, all while preserving full-attention-level accuracy.
+                        </p>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+    </section>
+    <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+        <img src="assert/RetroInfer/RetroInfer1_onepage.png" width="1000px"
+            style="border-radius: 5px;display: inline-block;padding: 0 10px 0 0px;" alt=''><br />
+    </div>
+
+
+
+    <section class="section">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h3 class="title is-3"><span class="dvima">Insights</span></h3>
+                        <ol>
+                            <li>
+                                <p>Attention sparsity makes it feasible to <font color="#337ab7"><b>offload the KV cache
+                                            to CPU memory to address the capacity limitation</b></font>, as the
+                                    inference system can selectively access a subset of KV vectors over PCIe.</p>
+                            </li>
+                            <li>
+                                <p>
+                                    <font color="#337ab7"><b>Maximum Inner Product Search (MIPS)</b></font>, a variant
+                                    of nearest neighbor search (NNS), can be seamlessly applied to identify critical
+                                    tokens in attention mechanisms.
+                                    This is due to the fact that <font color="#337ab7"><b>high attention scores signify
+                                            that their key vectors have a substantial inner product with the query
+                                            vector</b></font>.
+                                </p>
+                            </li>
+                            <li>
+                                <p> We design <font color="#337ab7"><b>wave index</b></font>, an attention-aware vector
+                                    index,
+                                    to not only retrieve the important KV
+                                    vectors accurately and efficiently, but also to do effective attention
+                                    approximation to <font color="#337ab7"><b>maintain the model accuracy as full
+                                            attention</b></font>.
+                                    Wave index also leverages the spatial locality inherent in key-values to reduce
+                                    the index construction overhead.
+                                </p>
+                            </li>
+                            <li>
+                                <p> Sparsity alone is not a panacea. Based on the observation that decoding phase
+                                    exhibits strong temporal locality,
+                                    we design <font color="#337ab7"><b>wave buffer</b></font>, which <font
+                                        color="#337ab7"><b>efficiently manages
+                                            the KV cache across GPU and CPU memory</b></font> and
+                                    caches hot KV vectors in GPU memory to reduce the PCIe bandwidth overhead.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3"><span class="dvima">Why <i>RetroInfer</i>?</span></h2>
+                        <p style="font-size: 100%">
+                            Utilizing attention sparsity is <font color="#337ab7"><b>challenging for three reasons</b>
+                            </font>:
+                            <font color="#337ab7"><b>(1)</b></font> important tokens (i.e., those with high attention
+                            weights) are <font color="#337ab7"><b>scattered across the context</b></font>, making their
+                            positions unpredictable;
+                            <font color="#337ab7"><b>(2)</b></font> tokens that are important at one decoding step
+                            (i.e., one query vector) <font color="#337ab7"><b>may not remain so in subsequent steps</b>
+                            </font>;
+                            <font color="#337ab7"><b>(3)</b></font> the sparsity <font color="#337ab7"><b>exhibits high
+                                    variability from two sources</b></font>: the architecture of the model itself and
+                            the nature of the decoding query.
+                            Previous works tend to rely on fixed-position heuristics to discard KV vectors or estimate
+                            token importance by partioning the KV cache into equal-sized chunks and using chunk
+                            representative vectors,
+                            which often leads to significant loss due to static assumptions or low retrieval precision.
+                            <br />
+                            <br />
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <img src="assert/RetroInfer/insights.png" width="600px"
+                                style="border-radius: 10px;display: inline-block;padding: 0 00px 0 0px;" alt=''><br />
+                        </div>
+                        <br />
+
+                        To address these issues, we present <font color="#337ab7"><b>RetroInfer</b></font>, an inference
+                        system that <font color="#337ab7"><b>builds the KV cache as a vector storage system</b></font>.
+                        We introduce an <font color="#337ab7"><b>A</b></font>ttention-a<font color="#337ab7"><b>W</b>
+                        </font>are <font color="#337ab7"><b>VE</b></font>ctor index called wave index that retrieves the
+                        important KV vectors accurately
+                        and efficiently as needed, and a wave buffer which manages
+                        memory across the GPU and CPU to facilitate wave index, also in an <font color="#337ab7">
+                            <b>attention-aware manner</b>
+                        </font>.
+                        Figure 1. shows the architecture of RetroInfer.
+                        <br />
+                        <br />
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <img src="assert/RetroInfer/architecture.png" width="600px"
+                                style="margin:auto;border-radius: 5px;display: inline-block;padding: 0 0 0 10px;"
+                                alt=''>
+
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <p>Figure 1. Architecture of RetroInfer. Circles with numbers represent the steps of
+                                attention computation, while steps with the same number occur in parallel.
+                                Colored circles indicate vectors. Centroids (bold-edged circles) are stored in the meta
+                                index.</p>
+                        </div>
+                        <br />
+                        To make judicious use of the GPU memory, the wave index employs a <font color="#337ab7">
+                            <b>cluster-based vector index</b>
+                        </font> design.
+                        Specifically, wave index partitions the KV vectors into clusters based on their similarity and
+                        stores the centroids of the clusters in a <font color="#337ab7"><b>meta index</b></font>, as the
+                        representative of each cluster in GPU memory.
+                        The wave buffer serves two purposes. <font color="#337ab7"><b>First</b></font>, it contains
+                        several buffers in GPU memory to accelerate inference throughput.
+                        These include <font color="#337ab7"><b>a block cache for KV vectors and an execution buffer</b>
+                        </font>, a dedicated memory region that sequentially arranges needed KV vectors for attention
+                        computation.
+                        The content of the execution buffer is copied from the steady zone, block cache, and directly
+                        from the CPU memory KV blocks in case of a cache miss.
+                        <font color="#337ab7"><b></b>Second</b></font>, a CPU-resident buffer manager that <font
+                            color="#337ab7"><b>manages the block cache and data movement between GPU and CPU memory</b>
+                        </font>.
+                        Figure 2. shows the architecture of the wave index(left) and wave buffer(right).
+                        <br />
+                        <br />
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <img src="assert/RetroInfer/wave-index.png" width="450px"
+                                style="margin:auto;border-radius: 5px;display: inline-block;padding: 0 0 0 10px;"
+                                alt=''>
+                            <img src="assert/RetroInfer/wave-buffer.png" width="450px"
+                                style="margin:auto;border-radius: 5px;display: inline-block;padding: 0 0 0 10px;"
+                                alt=''>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <p>Figure 2. (left) Architecture of wave-index. Wave index divides the context into segments
+                                (dotted boxes).
+                                Each vertical bar represents a token at one position. In the first row, tokens with the
+                                same color belong to the same cluster, and similar colors
+                                (e.g., yellow and orange) indicate token similarity, which is based on key vector
+                                similarity.
+                                In the second row, the darker the bar, the more important the token to the query.
+                                (right) Architecture of wave-buffer. The black arrows indicate the pointer relationship
+                                between the data structures.
+                                The red arrows indicates the possible three source of data copy to ensemble the
+                                execution buffer.
+                                Missed data is admitted into the block cache by copying from the execution buffer (blue
+                                arrow).
+                            </p>
+                        </div>
+                        <br />
+                        During decoding, RetroInfer computes the attention for each head in parallel, <font
+                            color="#337ab7"><b>following the steps in Figure 1</b></font>.:
+                        <font color="#337ab7"><b>(1)</b></font>: The centroids are sorted according to the similarity to
+                        the query vector, determining a subset of more critical clusters to retrieve for precise
+                        attention computation, and the clusters to perform estimation.
+                        <font color="#337ab7"><b>(2)</b></font>: The GPU performs <font color="#337ab7"><b>attention
+                                estimation (2-G)</b></font>, and <font color="#337ab7"><b>a request is sent to the
+                                buffer manager to retrieve the needed clusters (2-C)</b></font>. execution buffer
+                        through parallel data copying.
+                        <font color="#337ab7"><b>(3)</b></font>: The buffer manager <font color="#337ab7"><b>ensures
+                                that the KV blocks are ready in the execution buffer</b></font> through parallel data
+                        copying.
+                        <font color="#337ab7"><b>(4)</b></font>: The GPU <font color="#337ab7"><b>computes the precise
+                                attention using the KV vectors in the execution buffer</b></font>, while the attention
+                        <font color="#337ab7"><b>estimation (2-G) result is merged</b></font>.
+                        <br /><br />
+                        </p>
+                    </div>
+                    <div class="row is-full-width">
+                        <p style="font-size: 100%">
+                        <p class="title is-4">Our main contributions are <font color="#337ab7">four-fold</font>:</p>
+                        <ol>
+                            <li>
+                                <p>We present <font color="#337ab7"><b>RetroInfer</b></font>, a novel system that
+                                    reconceptualizes the key-value (KV) cache as a vector storage system which exploits
+                                    the inherent attention sparsity to <font color="#337ab7"><b>accelerate long-context
+                                            LLM inference</b></font>. </p>
+                            </li>
+                            <li>
+                                <p>We introduce an <font color="#337ab7"><b>Attention-aWare VEctor index called wave
+                                            index</b></font> that retrieves the important KV vectors accurately and
+                                    efficiently as needed,
+                                    and <font color="#337ab7"><b>a wave buffer</b></font> which manages memory across
+                                    the GPU and CPU to facilitate wave index, also in an attention-aware manner.</p>
+                            </li>
+                            <li>
+                                <p>We introduce <font color="#337ab7"><b>tripartite attention approximation</b></font>
+                                    to <font color="#337ab7"><b>ensure the accuracy of attention computation with
+                                            reduced computation cost</b></font> by leveraging both the properties of the
+                                    attention mechanism and the advantage of vector retrieval.</p>
+                            </li>
+                            <li>
+                                <p>We evaluate RetroInfer across <font color="#337ab7"><b>three benchmarks</b></font>:
+                                    RULER, LongBench, and Needle in a Haystack, with token lengths ranging from 5k to
+                                    1M, to assess the inference accuracy and efficiency of LLMs.
+                                    We demonstrate that RetroInfer <font color="#337ab7"><b>not only achieves
+                                            significant speedups over full and sparse attention baselines, but also
+                                            preserves model accuracy</b></font>.</p>
+                            </li>
+                        </ol>
+                        </p>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3"><span class="dvima">Experiments Results in Long-context Benchmarks</span>
+                        </h2>
+                        <p style="font-size: 100%">
+                            We utilize three representative long-context benchmarks to evaluate the inference accuracy
+                            of all systems: (1) RULER; (2) Needle-in-a-haystack (NIAH); (3) LongBench.
+                            <br />
+                        </p>
+                        <br />
+
+                        <p style="font-size: 100%">
+                            As shown in Table 1., RetroInfer consistently achieves better accuracy than other methods on
+                            almost all tasks and matches the accuracy of full attention.
+                            For the average task accuracy, RetroInfer has <font color="#337ab7"><b>only a drop of
+                                    0.73%/0.78%/1.46% compared to full attention</b></font> on
+                            Llama3.1-8B/Qwen2.5-7B/Llama3-8B-1048K, respectively.
+                            Compared to the best-performing sparse attention baselines on each model
+                            (Quest/InfiniGen/Quest for Llama3.1-8B/Qwen2.5-7B/Llama3-8B-1048K),
+                            RetroInfer achieves <font color="#337ab7"><b>5.48%/15.51%/3.33% accuracy improvements</b>
+                            </font>, respectively.
+                            <br />
+                        </p>
+                        <br />
+
+                        <div class="content has-text-justified">
+                            <div style="overflow-x: auto; width: 100%;">
+                                <table cellspacing="0" cellpadding="2" style="margin: 0 auto;">
+                                    <thead>
+                                        <tr>
+                                            <th>Methods</th>
+                                            <th>s1_niah</th>
+                                            <th>s2_niah</th>
+                                            <th>s3_niah</th>
+                                            <th>mk1_niah</th>
+                                            <th>mk2_niah</th>
+                                            <th>mk3_niah</th>
+                                            <th>mv_niah</th>
+                                            <th>mq_niah</th>
+                                            <th>fwe</th>
+                                            <th>cwe</th>
+                                            <th>qa_1</th>
+                                            <th>qa_2</th>
+                                            <th>vt</th>
+                                            <th>Avg.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Llama3.1-8B -->
+                                        <tr>
+                                            <td><em>Llama3.1-8B</em></td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>99.50</td>
+                                            <td>99.00</td>
+                                            <td>88.50</td>
+                                            <td>55.00</td>
+                                            <td>91.62</td>
+                                            <td>97.25</td>
+                                            <td>53.67</td>
+                                            <td>0.05</td>
+                                            <td>71.00</td>
+                                            <td>39.50</td>
+                                            <td>88.80</td>
+                                            <td>75.68</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quest</td>
+                                            <td>100.00</td>
+                                            <td>99.50</td>
+                                            <td>99.50</td>
+                                            <td>98.00</td>
+                                            <td>71.00</td>
+                                            <td>3.00</td>
+                                            <td>87.00</td>
+                                            <td>95.38</td>
+                                            <td>55.17</td>
+                                            <td>0.15</td>
+                                            <td>68.50</td>
+                                            <td>41.00</td>
+                                            <td>84.90</td>
+                                            <td>69.47</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MagicPIG</td>
+                                            <td>99.00</td>
+                                            <td>97.50</td>
+                                            <td>92.00</td>
+                                            <td>98.50</td>
+                                            <td>73.50</td>
+                                            <td>26.50</td>
+                                            <td>77.25</td>
+                                            <td>94.62</td>
+                                            <td>53.00</td>
+                                            <td>0.05</td>
+                                            <td>65.50</td>
+                                            <td>37.00</td>
+                                            <td>86.50</td>
+                                            <td>69.30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>InfiniGen</td>
+                                            <td>100.00</td>
+                                            <td>96.00</td>
+                                            <td>44.50</td>
+                                            <td>95.00</td>
+                                            <td>39.00</td>
+                                            <td>0.00</td>
+                                            <td>67.75</td>
+                                            <td>82.88</td>
+                                            <td>46.50</td>
+                                            <td>0.40</td>
+                                            <td>68.00</td>
+                                            <td>37.50</td>
+                                            <td>75.50</td>
+                                            <td>57.93</td>
+                                        </tr>
+                                        <tr style="background-color:#ECF5FF">
+                                            <td><strong>RetroInfer</strong></td>
+                                            <td>100.00</td>
+                                            <td>99.50</td>
+                                            <td>100.00</td>
+                                            <td>99.00</td>
+                                            <td>83.00</td>
+                                            <td>38.50</td>
+                                            <td>92.88</td>
+                                            <td>97.38</td>
+                                            <td>64.00</td>
+                                            <td>0.10</td>
+                                            <td>70.50</td>
+                                            <td>40.50</td>
+                                            <td>89.00</td>
+                                            <td><strong>74.95</strong></td>
+                                        </tr>
+
+                                        <!-- Qwen2.5-7B -->
+                                        <tr>
+                                            <td><em>Qwen2.5-7B</em></td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>92.50</td>
+                                            <td>48.50</td>
+                                            <td>18.50</td>
+                                            <td>67.00</td>
+                                            <td>88.00</td>
+                                            <td>64.00</td>
+                                            <td>41.20</td>
+                                            <td>44.50</td>
+                                            <td>36.50</td>
+                                            <td>85.20</td>
+                                            <td>68.15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quest</td>
+                                            <td>100.00</td>
+                                            <td>55.00</td>
+                                            <td>90.00</td>
+                                            <td>49.50</td>
+                                            <td>27.50</td>
+                                            <td>0.00</td>
+                                            <td>48.00</td>
+                                            <td>53.75</td>
+                                            <td>63.50</td>
+                                            <td>34.00</td>
+                                            <td>38.00</td>
+                                            <td>30.00</td>
+                                            <td>84.90</td>
+                                            <td>51.86</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MagicPIG</td>
+                                            <td>92.50</td>
+                                            <td>62.50</td>
+                                            <td>37.50</td>
+                                            <td>54.50</td>
+                                            <td>25.50</td>
+                                            <td>3.50</td>
+                                            <td>42.00</td>
+                                            <td>46.00</td>
+                                            <td>65.33</td>
+                                            <td>38.40</td>
+                                            <td>40.50</td>
+                                            <td>33.50</td>
+                                            <td>80.50</td>
+                                            <td>47.86</td>
+                                        </tr>
+                                        <tr>
+                                            <td>InfiniGen</td>
+                                            <td>100.00</td>
+                                            <td>77.00</td>
+                                            <td>53.50</td>
+                                            <td>70.00</td>
+                                            <td>10.00</td>
+                                            <td>0.50</td>
+                                            <td>48.00</td>
+                                            <td>58.50</td>
+                                            <td>58.83</td>
+                                            <td>29.60</td>
+                                            <td>42.00</td>
+                                            <td>33.50</td>
+                                            <td>87.50</td>
+                                            <td>51.46</td>
+                                        </tr>
+                                        <tr style="background-color:#ECF5FF">
+                                            <td><strong>RetroInfer</strong></td>
+                                            <td>100.00</td>
+                                            <td>98.50</td>
+                                            <td>99.50</td>
+                                            <td>93.00</td>
+                                            <td>47.00</td>
+                                            <td>15.50</td>
+                                            <td>65.25</td>
+                                            <td>84.50</td>
+                                            <td>58.67</td>
+                                            <td>42.25</td>
+                                            <td>46.00</td>
+                                            <td>38.50</td>
+                                            <td>87.20</td>
+                                            <td><strong>67.37</strong></td>
+                                        </tr>
+
+                                        <!-- Llama3-8B-1048K -->
+                                        <tr>
+                                            <td><em>Llama3-8B-1048K</em></td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>98.50</td>
+                                            <td>99.50</td>
+                                            <td>66.50</td>
+                                            <td>96.00</td>
+                                            <td>98.75</td>
+                                            <td>75.50</td>
+                                            <td>0.75</td>
+                                            <td>64.50</td>
+                                            <td>47.00</td>
+                                            <td>79.80</td>
+                                            <td>78.98</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quest</td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>99.00</td>
+                                            <td>92.50</td>
+                                            <td>14.50</td>
+                                            <td>98.00</td>
+                                            <td>99.00</td>
+                                            <td>67.33</td>
+                                            <td>3.00</td>
+                                            <td>63.00</td>
+                                            <td>44.50</td>
+                                            <td>83.70</td>
+                                            <td>74.19</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MagicPIG</td>
+                                            <td>99.50</td>
+                                            <td>95.00</td>
+                                            <td>94.00</td>
+                                            <td>88.50</td>
+                                            <td>96.50</td>
+                                            <td>44.50</td>
+                                            <td>74.50</td>
+                                            <td>76.88</td>
+                                            <td>73.67</td>
+                                            <td>0.40</td>
+                                            <td>63.00</td>
+                                            <td>44.00</td>
+                                            <td>75.90</td>
+                                            <td>71.26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>InfiniGen</td>
+                                            <td>100.00</td>
+                                            <td>99.50</td>
+                                            <td>98.50</td>
+                                            <td>97.00</td>
+                                            <td>88.50</td>
+                                            <td>15.50</td>
+                                            <td>91.75</td>
+                                            <td>91.88</td>
+                                            <td>63.83</td>
+                                            <td>0.80</td>
+                                            <td>62.50</td>
+                                            <td>45.50</td>
+                                            <td>80.00</td>
+                                            <td>71.94</td>
+                                        </tr>
+                                        <tr style="background-color:#ECF5FF">
+                                            <td><strong>RetroInfer</strong></td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>100.00</td>
+                                            <td>97.50</td>
+                                            <td>96.50</td>
+                                            <td>60.00</td>
+                                            <td>92.75</td>
+                                            <td>98.50</td>
+                                            <td>73.00</td>
+                                            <td>0.75</td>
+                                            <td>64.00</td>
+                                            <td>46.50</td>
+                                            <td>78.20</td>
+                                            <td><strong>77.52</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <p>Table 1. Model Accuracy(RULER, 128K Context). RetroInfer significantly outperforms other
+                                methods and maintains the same accuracy level as full attention on three models.</p>
+                        </div>
+
+                        <br />
+
+
+                        <p style="font-size: 100%">
+                            To further evaluate the effectiveness of RetroInfer on more realistic tasks, we selected
+                            five tasks from the LongBench benchmark for extensive evaluation.
+                            As shown in Table 2., RetroInfer consistently outperforms all baselines, <font
+                                color="#337ab7"><b>with average scores at most 0.23% lower than full attention</b>
+                            </font>.
+                            <br />
+                        </p>
+                        <br />
+
+                        <div class="content has-text-justified">
+                            <div style="overflow-x: auto; max-width: 100%;">
+                                <table cellspacing="0" cellpadding="2" style="margin: 0 auto;">
+                                    <thead>
+                                        <tr>
+                                            <th>Methods</th>
+                                            <th>QaS</th>
+                                            <th>GoR</th>
+                                            <th>TrQ</th>
+                                            <th>RbP</th>
+                                            <th>LCC</th>
+                                            <th>Avg.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><i>Llama3.1-8B</i></td>
+                                            <td>12.88</td>
+                                            <td>34.30</td>
+                                            <td>91.31</td>
+                                            <td>56.40</td>
+                                            <td>62.88</td>
+                                            <td>51.55</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quest</td>
+                                            <td>9.43</td>
+                                            <td>31.42</td>
+                                            <td>89.86</td>
+                                            <td>50.41</td>
+                                            <td>44.30</td>
+                                            <td>45.08</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MagicPIG</td>
+                                            <td>12.00</td>
+                                            <td>33.18</td>
+                                            <td>90.80</td>
+                                            <td>55.50</td>
+                                            <td>61.14</td>
+                                            <td>50.52</td>
+                                        </tr>
+                                        <tr>
+                                            <td>InfiniGen</td>
+                                            <td>10.96</td>
+                                            <td>32.36</td>
+                                            <td>90.71</td>
+                                            <td>49.94</td>
+                                            <td>44.12</td>
+                                            <td>45.62</td>
+                                        </tr>
+                                        <tr style="background-color: #e6f0ff;">
+                                            <td><b>RetroInfer</b></td>
+                                            <td>12.31</td>
+                                            <td>34.71</td>
+                                            <td>91.33</td>
+                                            <td>56.15</td>
+                                            <td>62.10</td>
+                                            <td><b>51.32</b></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><i>Qwen2.5-7B</i></td>
+                                            <td>9.98</td>
+                                            <td>35.41</td>
+                                            <td>87.15</td>
+                                            <td>61.69</td>
+                                            <td>56.34</td>
+                                            <td>50.11</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quest</td>
+                                            <td>9.05</td>
+                                            <td>31.54</td>
+                                            <td>82.16</td>
+                                            <td>53.15</td>
+                                            <td>42.07</td>
+                                            <td>43.59</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MagicPIG</td>
+                                            <td>9.87</td>
+                                            <td>34.00</td>
+                                            <td>86.35</td>
+                                            <td>60.25</td>
+                                            <td>55.43</td>
+                                            <td>49.18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>InfiniGen</td>
+                                            <td>9.61</td>
+                                            <td>33.10</td>
+                                            <td>87.02</td>
+                                            <td>46.72</td>
+                                            <td>30.58</td>
+                                            <td>41.41</td>
+                                        </tr>
+                                        <tr style="background-color: #e6f0ff;">
+                                            <td><b>RetroInfer</b></td>
+                                            <td>9.77</td>
+                                            <td>34.76</td>
+                                            <td>87.33</td>
+                                            <td>61.80</td>
+                                            <td>55.76</td>
+                                            <td><b>49.88</b></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><i>Llama3-8B-1048K</i></td>
+                                            <td>14.25</td>
+                                            <td>35.25</td>
+                                            <td>87.06</td>
+                                            <td>44.74</td>
+                                            <td>45.18</td>
+                                            <td>45.30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quest</td>
+                                            <td>11.22</td>
+                                            <td>30.35</td>
+                                            <td>86.94</td>
+                                            <td>44.84</td>
+                                            <td>36.74</td>
+                                            <td>42.02</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MagicPIG</td>
+                                            <td>13.66</td>
+                                            <td>33.28</td>
+                                            <td>87.21</td>
+                                            <td>42.56</td>
+                                            <td>43.58</td>
+                                            <td>44.06</td>
+                                        </tr>
+                                        <tr>
+                                            <td>InfiniGen</td>
+                                            <td>12.15</td>
+                                            <td>30.81</td>
+                                            <td>85.39</td>
+                                            <td>38.84</td>
+                                            <td>29.41</td>
+                                            <td>39.32</td>
+                                        </tr>
+                                        <tr style="background-color: #e6f0ff;">
+                                            <td><b>RetroInfer</b></td>
+                                            <td>15.17</td>
+                                            <td>34.66</td>
+                                            <td>86.74</td>
+                                            <td>45.58</td>
+                                            <td>45.66</td>
+                                            <td><b>45.56</b></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <p>Table 2. Model Accuracy (LongBench). RetroInfer consistently outperforms all baselines
+                                and maintains the same accuracy level as full attention on three models.</p>
+                        </div>
+
+
+
+                        <br />
+                        <p style="font-size: 100%">
+                            Figure 3. (left) presents the average model accuracy
+                            across context lengths from 8K to 128K on RULER on all models. <font color="#337ab7">
+                                <b>RetroInfer maintains its advantage
+                                    over others, showing the robustness of RetroInfer's attention
+                                    approximation</b>
+                            </font>. Figure 3. (right) further demonstrates the accuracy of
+                            RetroInfer
+                            with context lengths up to 1M.
+                            RetroInfer achieves <font color="#337ab7"><b>100% accuracy on all contexts</b></font>,
+                            demonstrating our system's capability to support million-token with accuracy.
+                            <br />
+                        </p>
+                        <br />
+
+
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <img src="assert/RetroInfer/diff_length_avg.jpg" width="400px"
+                                style="margin:auto;border-radius: 5px;display: inline-block;padding: 0 0 0 10px;"
+                                alt=''>
+                            <img src="assert/RetroInfer/Llama3-8B-1048K_needle_1M.jpg" width="330px"
+                                style="margin:auto;border-radius: 5px;display: inline-block;padding: 0 0 0 10px;"
+                                alt=''>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <p>Figure 3. (left) Average Model Accuracy on RULER (8K to 128K Context) and (right)
+                                Needle-in-a-hay-stack (Llama3-8B-1048K).</p>
+                        </div>
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3"><span class="dvima">Inference Efficiency</span></h2>
+                        <h3 class="title is-4"><span class="dvima">Throughput</span></h3>
+
+                        <p style="font-size: 100%">
+                            Figure 4. shows the decoding through put of RetroInfer and other methods across four
+                            different context lengths ranging from 60K to 1024K.
+                            For the context length of 60K, 120K and 240K, RetroInfer <font color="#337ab7">
+                                <b>outperforms full attention by 4.4×, 4.4×, and 4.5×</b>
+                            </font> respectively.
+                            When compared with Quest, Quest (offload), MagicPIG and InfiniGen,
+                            the <font color="#337ab7"><b>speedups increase to 3.4×, 18.3×, 11.6×, and 76.9×</b></font>,
+                            with an average across three context lengths.
+                            Combined with results in Figure 12 (a), RetroInfer achieves the best throughput while also
+                            outperforming other baselines in terms of model accuracy.
+                            <br />
+                        </p>
+
+                        <br />
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <img src="assert/RetroInfer/throughput_different_length.jpg" width="1000px"
+                                style="margin:auto;border-radius: 5px;display: inline-block;padding: 0 0 0 10px;"
+                                alt=''>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <p>Figure 4. RULER Accuracy and Decoding throughput vs. Context Length and Batch Size
+                                (Llama3-8B-1048K).
+                                (a) RetroInfer matches full attention accuracy and outperforms baselines across
+                                different context lengths.
+                                (b)-(e) RetroInfer scales well with the batch size and achieves the best throughput on
+                                all context lengths.</p>
+                        </div>
+
+                        <br />
+                        <h3 class="title is-4"><span class="dvima">Prefilling Latency</span></h3>
+                        <p style="font-size: 100%">
+                            Figure 5. shows that the prefilling latency of RetroInfer exceeds that of full attention by
+                            only <font color="#337ab7"><b>7%, 4%, and 2%</b></font> at context lengths of 120K, 240K,
+                            and 480K, respectively.
+                            Index building is much faster than full attention and becomes negligible at longer context
+                            lengths.
+                            This reduction stems from the quadratic cost of full attention compared to <font
+                                color="#337ab7"><b>the lower complexity of segmented clustering and asynchronous wave
+                                    buffer construction</b></font>.
+                            <br />
+                        </p>
+                        <br />
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <img src="assert/RetroInfer/prefill_latency.jpg" width="500px"
+                                style="margin:auto;border-radius: 5px;display: inline-block;padding: 0 0 0 10px;"
+                                alt=''>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                            <p>Figure 5. Prefilling Latency vs. Context Lengths (batch = 1).
+                                The prefilling latency of RetroInfer is only slightly higher than full attention, and
+                                the overhead becomes negligible as the context length increases.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <br>
+
+
+        <section class="section" id="BibTeX">
+            <div class="container is-max-widescreen content">
+                <h2 class="title">BibTeX</h2>
+                <p style="font-size: 125%">
+                    If you find this project helpful, please cite the following papers:
+                </p>
+                <pre><code>@misc{chen2025retroinfervectorstorageapproachscalable,
+            title={RetroInfer: A Vector-Storage Approach for Scalable Long-Context LLM Inference}, 
+            author={Yaoqi Chen and Jinkai Zhang and Baotong Lu and Qianxi Zhang and Chengruidong Zhang and Jingjia Luo and Di Liu and Huiqiang Jiang and Qi Chen and Jing Liu and Bailu Ding and Xiao Yan and Jiawei Jiang and Chen Chen and Mingxing Zhang and Yuqing Yang and Fan Yang and Mao Yang},
+            year={2025},
+            eprint={2505.02922},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2505.02922}, 
+      }
+</code></pre>
+            </div>
+            <br />
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column">
+                        <div class="content has-text-centered">
+                            <p>
+                                unique visitors | © 2024-2025 Microsoft <br />
+                                Website template borrowed from <a
+                                    href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>,
+                                <a href="https://vimalabs.github.io/">VIMA</a>, and <a
+                                    href="https://language-to-reward.github.io/">L2R</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H0R7NXRR6L"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-H0R7NXRR6L');
+</script>
+
+
+</html>
