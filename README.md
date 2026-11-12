@@ -7,7 +7,7 @@ Systems for AI. No build step or external runtime dependencies are required.
 
 - `index.html`: biography, research, publications, service, and awards.
 - `css/home.css`: editorial layout, responsive reading widths, and the research
-  landscape animation. The three research-story figures are intentionally static.
+  landscape animation.
 - `js/home.js`: the optional animation pause/resume control.
 - `photos/`: portrait and favicon.
 - `fonts/`: self-hosted Inter variable font and its SIL Open Font License.
@@ -31,5 +31,7 @@ do not shrink reading text at mobile breakpoints.
 The opening landscape is a conceptual map of related research directions, not
 an architecture diagram of a combined system. Desktop and mobile have separate
 SVG compositions so labels remain legible instead of scaling a wide figure down.
-Keep the biography, publication list, academic service, and awards on the shared
-reading column; use the wider layout only for research illustrations and stories.
+The research section contains only the two broad research directions and the
+highlighted internship notice; individual papers are listed under publications.
+Keep these sections on the shared reading column, with the wider layout reserved
+for the opening research illustration.

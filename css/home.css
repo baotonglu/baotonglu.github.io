@@ -83,31 +83,6 @@ h1 { font-size: clamp(58px, 6.2vw, 82px); font-weight: 450; letter-spacing: -.06
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 16px 24px; margin-bottom: 30px; }
 h2 { font-size: 40px; font-weight: 450; letter-spacing: -.05em; line-height: 1.2; }
 .section-link { font-size: var(--detail-size); white-space: nowrap; }
-.section-intro { font-size: var(--reading-size); line-height: 1.65; }
-.section-intro strong { font-weight: 550; }
-.research-stories { width: min(1080px, 100%); margin: 64px auto 0; }
-.research-story { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 80px; align-items: center; padding-block: 48px; }
-.research-story:first-child { padding-top: 0; }
-.research-story + .research-story { border-top: 1px solid var(--line); }
-.story-kicker { font-size: var(--meta-size); color: var(--muted); margin-bottom: 12px; }
-.research-story h3 { font-size: 34px; font-weight: 500; line-height: 1.2; letter-spacing: -.045em; }
-.research-story h3 a { text-decoration: none; }
-.research-story h3 span { font-size: 21px; color: var(--orange); margin-left: 8px; }
-.story-question { font-size: 23px; line-height: 1.45; letter-spacing: -.035em; margin-top: 20px; }
-.story-text { font-size: 18px; line-height: 1.75; margin-top: 18px; }
-.story-paper { display: block; font-size: var(--detail-size); line-height: 1.65; margin-top: 24px; }
-.story-figure { min-width: 0; }
-.story-figure svg { max-width: 460px; margin-inline: auto; }
-.story-figure figcaption { margin-top: 18px; font-size: var(--meta-size); color: var(--muted); text-align: center; }
-.diagram-line { fill: none; stroke: #a5b297; stroke-width: 1.2; }
-.diagram-blocks { fill: #e0e5d8; stroke: #9eac92; stroke-width: 1; }
-.diagram-selected { fill: #bd9173; stroke: #a27554; stroke-width: .8; }
-.diagram-engine { fill: #d9e2d0; stroke: #8da17c; stroke-width: 1; }
-.diagram-text { font-family: "Inter", Arial, sans-serif; font-size: 19px; fill: var(--ink); text-anchor: middle; }
-.diagram-label { font-family: "Inter", Arial, sans-serif; font-size: 17px; fill: var(--muted); text-anchor: middle; }
-.diagram-seed { fill: #ad7854; }
-.diagram-specialists { fill: #dce5d2; stroke: #8da17c; stroke-width: 1; }
-.research-directions { margin-top: 36px; }
 .research-directions p { font-size: 18px; line-height: 1.75; }
 .research-directions p + p { margin-top: 24px; }
 .research-directions strong { font-weight: 550; }
@@ -170,7 +145,6 @@ h2 { font-size: 40px; font-weight: 450; letter-spacing: -.05em; line-height: 1.2
   .site-header { width: calc(100% - 72px); gap: 24px; }
   .site-header nav { gap: 22px; }
   .hero { padding-top: 66px; }
-  .research-story { gap: 44px; }
   .landscape-stages { font-size: 17px; }
   .landscape-stages span { font-size: 13px; }
   .figure-footer { flex-direction: column; gap: 16px; }
@@ -197,13 +171,6 @@ h2 { font-size: 40px; font-weight: 450; letter-spacing: -.05em; line-height: 1.2
   .section { padding-top: 76px; }
   .section-heading { margin-bottom: 24px; }
   h2 { font-size: 33px; }
-  .research-stories { margin-top: 40px; }
-  .research-story { grid-template-columns: 1fr; gap: 30px; padding-block: 40px; }
-  .research-story h3 { font-size: 30px; }
-  .story-question { font-size: 22px; margin-top: 18px; }
-  .story-figure { width: min(440px, 100%); margin-inline: auto; }
-  .story-figure figcaption { font-size: var(--meta-size); }
-  .research-directions { margin-top: 18px; }
   .intern-note { padding-left: 18px; }
   .portrait-block img { width: 100px; height: 123px; }
   .bio-timeline li { grid-template-columns: 105px minmax(0, 1fr); gap: 4px 16px; }
@@ -234,7 +201,7 @@ h2 { font-size: 40px; font-weight: 450; letter-spacing: -.05em; line-height: 1.2
   .flow-line { stroke-dasharray: none; opacity: .5; }
 }
 @media print {
-  .site-header, .skip-link, .hero-figure, .story-figure, .footer-meta { display: none; }
+  .site-header, .skip-link, .hero-figure, .footer-meta { display: none; }
   :root { --reading-size: 12pt; --detail-size: 10pt; --meta-size: 9pt; }
   body { background: white; font-size: 11pt; }
   .page-width, .reading-width, .hero-copy { width: 100%; }
@@ -242,12 +209,8 @@ h2 { font-size: 40px; font-weight: 450; letter-spacing: -.05em; line-height: 1.2
   h1 { font-size: 32pt; }
   h2 { font-size: 22pt; }
   .hero-focus { font-size: 18pt; }
-  .hero-role, .story-text, .service-row p { font-size: 11pt; }
+  .hero-role, .service-row p { font-size: 11pt; }
   .section { padding-top: 28px; }
-  .research-stories { margin-top: 22px; }
-  .research-story { display: block; padding-block: 22px; break-inside: avoid; }
-  .research-story h3 { font-size: 18pt; }
-  .story-question { font-size: 13pt; }
   .portrait-block { display: none; }
   .publication-list li { break-inside: avoid; padding-bottom: 18px; }
   .publication-list h4 { font-size: 12pt; }
