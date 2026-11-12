@@ -2,6 +2,7 @@ const motionToggle = document.querySelector(".motion-toggle");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (motionToggle) {
+  document.body.classList.add("motion-ready");
   const updateMotionControl = () => {
     motionToggle.hidden = reducedMotion.matches;
     const paused = document.body.classList.contains("motion-paused");
