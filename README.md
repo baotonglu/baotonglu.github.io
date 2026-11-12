@@ -18,3 +18,9 @@ Open `index.html` in a browser, or serve this directory with any static HTTP
 server. All homepage content and navigation work without JavaScript. Animations
 respect the system's reduced-motion preference and can also be paused using the
 control below the opening diagram.
+
+Typography is defined by the reading, detail, and metadata size variables in
+`css/home.css`. Keep narrative copy at 18-20px and publication authors and other
+supporting content at least 16px, using the primary near-black text color.
+Reserve the secondary color and smaller type for labels, dates, and captions;
+do not shrink reading text at mobile breakpoints.
