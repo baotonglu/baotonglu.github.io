@@ -111,7 +111,6 @@ h2 { font-size: 40px; font-weight: 450; letter-spacing: -.05em; line-height: 1.2
 .research-directions p { font-size: 18px; line-height: 1.75; }
 .research-directions p + p { margin-top: 24px; }
 .research-directions strong { font-weight: 550; }
-.research-directions a { font-size: var(--detail-size); }
 .intern-note { margin-top: 42px; padding: 0 0 0 22px; border-left: 2px solid #b88966; font-size: 18px; line-height: 1.8; }
 .intern-note strong { display: block; margin-bottom: 8px; font-weight: 550; }
 .intern-highlight { color: var(--orange); background: #ece0d1; padding: 2px 3px; font-weight: 550; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
