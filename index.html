@@ -9,17 +9,16 @@
   <link rel="icon" href="photos/mark.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/home.css">
-  <script src="js/home.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="wordmark" href="#home" aria-label="Baotong Lu, back to top">Baotong Lu<span class="wordmark-dot" aria-hidden="true"></span></a>
+    <a class="wordmark" href="index.html" aria-label="Baotong Lu, home" aria-current="page">Baotong Lu<span class="wordmark-dot" aria-hidden="true"></span></a>
     <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#service">Service</a>
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="service.html">Service</a>
     </nav>
     <a class="header-contact" href="mailto:baotonglu@microsoft.com">Get in touch <span aria-hidden="true">&#8599;</span></a>
   </header>
@@ -38,166 +37,12 @@
           <a href="mailto:baotonglu@microsoft.com">Email <span aria-hidden="true">&#8599;</span></a>
         </div>
       </div>
-      <figure class="hero-figure" aria-labelledby="landscape-caption">
-        <div class="landscape-stages" aria-hidden="true">
-          <div>Long-context inference<span>Sparse access</span></div>
-          <div>Hierarchical memory<span>Storage &amp; retrieval</span></div>
-          <div>Agent memory<span>Capability-driven evolution</span></div>
-        </div>
-        <div id="landscape-visual">
-          <svg class="landscape-desktop" viewBox="0 0 1200 370" role="img" aria-labelledby="landscape-title landscape-desc">
-            <title id="landscape-title">From context to memory to more capable agents</title>
-            <desc id="landscape-desc">A conceptual map of three related research directions. Sparse access selects from a large context; a hierarchy of memory tiers connects storage and computation; capability specialists contribute to an evolving agent memory program.</desc>
-            <defs>
-              <pattern id="landscape-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0 H0 V32" fill="none" stroke="#deded4" stroke-width=".6"/></pattern>
-              <pattern id="context-cells" width="25" height="25" patternUnits="userSpaceOnUse"><rect x="4" y="4" width="15" height="15" rx="2" fill="#e1e4d9" stroke="#a8b49c" stroke-width=".7"/></pattern>
-              <pattern id="memory-cells" width="24" height="26" patternUnits="userSpaceOnUse"><path d="M0 0 V26" stroke="#a2af9a" stroke-width=".7"/></pattern>
-              <linearGradient id="landscape-fade"><stop offset="0" stop-color="white" stop-opacity="0"/><stop offset=".08" stop-color="white"/><stop offset=".92" stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient>
-              <mask id="landscape-mask"><rect width="1200" height="370" fill="url(#landscape-fade)"/></mask>
-            </defs>
-            <g mask="url(#landscape-mask)">
-              <rect width="1200" height="370" fill="url(#landscape-grid)"/>
-              <g class="landscape-traces">
-                <path d="M0 96 C55 96 45 115 75 115 M0 128 C55 128 45 140 75 140 M0 160 H75 M0 192 C55 192 45 190 75 190 M0 224 C55 224 45 215 75 215 M0 256 C55 256 45 240 75 240"/>
-                <path d="M225 115 C270 115 255 157 303 157 M225 140 C265 140 270 170 303 170 M225 165 H303 M225 190 H303 M225 215 C270 215 270 198 303 198 M225 240 C270 240 260 211 303 211"/>
-                <path d="M349 184 C420 184 420 125 505 125 M349 184 C420 184 420 196 470 196 M349 184 C420 184 390 278 440 278"/>
-                <path d="M695 125 C760 125 745 184 800 184 M730 196 C765 196 765 184 800 184 M760 278 C795 278 760 184 800 184"/>
-                <path d="M800 184 C860 184 845 88 918 88 L1008 184 L918 280 C845 280 860 184 800 184 M800 184 H1008 M918 88 V280 M1008 184 H1200"/>
-                <path d="M1110 224 C1110 350 326 350 326 242"/>
-              </g>
-              <rect x="75" y="100" width="150" height="150" fill="url(#context-cells)"/>
-              <g class="selected-cells"><rect x="104" y="104" width="15" height="15" rx="2"/><rect x="179" y="129" width="15" height="15" rx="2"/><rect x="129" y="179" width="15" height="15" rx="2"/><rect x="204" y="204" width="15" height="15" rx="2"/><rect x="79" y="229" width="15" height="15" rx="2"/></g>
-              <rect class="query-gate" x="303" y="144" width="46" height="80" rx="3"/>
-              <path d="M314 164 H338 M314 184 H338 M314 204 H338" stroke="#b48164" stroke-width="1.5"/>
-              <g class="memory-tiers">
-                <rect x="505" y="104" width="190" height="42" rx="2"/>
-                <rect x="470" y="167" width="260" height="58" rx="2"/>
-                <rect x="440" y="249" width="320" height="58" rx="2"/>
-              </g>
-              <rect x="515" y="112" width="170" height="26" fill="url(#memory-cells)"/>
-              <rect x="480" y="183" width="240" height="26" fill="url(#memory-cells)"/>
-              <rect x="450" y="265" width="300" height="26" fill="url(#memory-cells)"/>
-              <rect class="memory-active" x="563" y="112" width="24" height="26" rx="1"/>
-              <rect class="memory-active" x="624" y="183" width="24" height="26" rx="1"/>
-              <rect class="memory-active" x="528" y="265" width="24" height="26" rx="1"/>
-              <g class="landscape-specialists"><circle cx="918" cy="88" r="17"/><circle cx="918" cy="184" r="17"/><circle cx="918" cy="280" r="17"/></g>
-              <path class="agent-program" d="M1008 157 L1035 184 L1008 211 L981 184 Z"/>
-              <path d="M1000 184 H1016 M1008 176 V192" stroke="#f6f3ed" stroke-width="1.5"/>
-              <path class="flow-line flow-orange" pathLength="1000" d="M0 128 C55 128 45 140 75 140 H185 C265 140 270 170 326 184 C420 184 420 125 600 125 H695 C760 125 745 184 800 184 C860 184 845 88 918 88 L1008 184 H1200"/>
-              <path class="flow-line flow-green" pathLength="1000" d="M0 224 C55 224 45 215 75 215 H210 C270 215 270 198 326 184 C420 184 390 278 600 278 H760 C795 278 760 184 800 184 C860 184 845 280 918 280 L1008 184 H1200"/>
-              <path class="flow-line flow-blue" pathLength="1000" d="M1110 224 C1110 350 326 350 326 242"/>
-            </g>
-          </svg>
-          <svg class="landscape-mobile" viewBox="0 0 360 660" role="img" aria-labelledby="mobile-landscape-title mobile-landscape-desc">
-            <title id="mobile-landscape-title">Context, memory, and agents</title>
-            <desc id="mobile-landscape-desc">Three related research directions, arranged vertically: sparse attention for long-context inference, hierarchical memory for storage and retrieval, and capability-driven evolution of agent memory.</desc>
-            <defs><pattern id="mobile-context" width="24" height="24" patternUnits="userSpaceOnUse"><rect x="3" y="3" width="14" height="14" rx="2" fill="#e1e4d9" stroke="#a8b49c" stroke-width=".7"/></pattern></defs>
-            <text class="landscape-mobile-title" x="16" y="30">Long-context inference</text>
-            <text class="landscape-mobile-label" x="16" y="56">Sparse access</text>
-            <rect x="36" y="78" width="144" height="96" fill="url(#mobile-context)"/>
-            <g class="selected-cells"><rect x="51" y="99" width="14" height="14" rx="2"/><rect x="123" y="123" width="14" height="14" rx="2"/></g>
-            <g class="landscape-traces"><path d="M180 96 C210 96 205 124 240 124 M180 148 C210 148 205 124 240 124 M270 124 H318 C342 124 342 285 270 285 H180 V302"/></g>
-            <rect class="query-gate" x="240" y="104" width="30" height="40" rx="2"/>
-            <text class="landscape-mobile-title" x="16" y="250">Hierarchical memory</text>
-            <text class="landscape-mobile-label" x="16" y="276">Storage &amp; retrieval</text>
-            <g class="memory-tiers"><rect x="115" y="300" width="130" height="22" rx="2"/><rect x="85" y="334" width="190" height="22" rx="2"/><rect x="55" y="368" width="250" height="22" rx="2"/></g>
-            <path class="landscape-traces" d="M180 322 V334 M180 356 V368 M180 390 V434 H318 C342 434 342 563 280 563"/>
-            <text class="landscape-mobile-title" x="16" y="470">Agent memory</text>
-            <text class="landscape-mobile-label" x="16" y="496">Capability-driven evolution</text>
-            <path class="landscape-traces" d="M50 565 L150 525 L260 565 L150 615 Z M150 525 V615 M260 565 V644 H344 V190 H300"/>
-            <g class="landscape-specialists"><circle cx="150" cy="525" r="12"/><circle cx="150" cy="615" r="12"/></g>
-            <circle class="memory-active" cx="50" cy="565" r="7"/>
-            <path class="agent-program" d="M260 546 L279 565 L260 584 L241 565 Z"/>
-            <path class="flow-line flow-orange" pathLength="1000" d="M65 106 H180 C210 106 205 124 255 124 H318 C342 124 342 285 270 285 H180 V390 V434 H318 C342 434 342 563 260 565 L150 525"/>
-            <path class="flow-line flow-green" pathLength="1000" d="M150 615 L260 565 V644 H344 V190 H300"/>
-          </svg>
-        </div>
-        <div class="figure-footer">
-          <figcaption id="landscape-caption">A conceptual view of my research: making context accessible, memory scalable, and agents more capable.</figcaption>
-          <button class="motion-toggle" type="button" aria-controls="landscape-visual" aria-pressed="false" hidden>Pause animations</button>
-        </div>
-      </figure>
-    </section>
-
-    <section class="section page-width" id="research" aria-label="Research interests and internships">
-      <div class="research-directions reading-width">
-        <p><strong>Systems for AI.</strong> Designing systems that enable more capable, efficient, and scalable AI.</p>
-        <p><strong>AI for Systems.</strong> Using AI to rethink how systems are designed, built, and operated.</p>
-      </div>
-      <aside class="intern-note reading-width"><p><strong>Research internships</strong><mark class="intern-highlight">I am seeking research interns interested in AI and systems.</mark> <a href="mailto:baotonglu@microsoft.com">Get in touch by email <span aria-hidden="true">&#8599;</span></a></p></aside>
-    </section>
-
-    <section class="section page-width about-section" id="about" aria-labelledby="about-title">
-      <div class="section-heading reading-width"><h2 id="about-title">About</h2></div>
-      <div class="about-grid reading-width">
-        <div class="portrait-block">
-          <img src="photos/jeff.jpg" alt="Portrait of Baotong Lu" width="150" height="184" loading="lazy">
-        </div>
-        <div class="about-copy">
-          <p>I am a Senior Researcher in the <a href="https://www.microsoft.com/en-us/research/group/systems-and-networking-research-group-asia/">Systems and Networking Research Group</a> at <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/">Microsoft Research Asia</a>.</p>
-          <p>I received my PhD from The Chinese University of Hong Kong in 2023 and visited Simon Fraser University in 2019 and 2023. My research spans machine learning systems and database management systems, with a focus on emerging applications and hardware.</p>
-          <p>I received the <strong>2021 ACM SIGMOD Research Highlight Award</strong>. <a href="http://www.vldb.org/pvldb/vol13/p1147-lu.pdf">Dash</a> and <a href="https://arxiv.org/pdf/2105.00683">APEX</a> were also selected among the <a href="https://www.paperdigest.org/2024/10/most-influential-arxiv-databases-papers-2024-10/">Most Influential ArXiv (Databases) Papers</a> (top 30 per year).</p>
-          <ol class="bio-timeline" aria-label="Academic background">
-            <li><span class="mono">2019 / 2023</span><strong>Simon Fraser University</strong><span>Research visits</span></li>
-            <li><span class="mono">2023</span><strong>The Chinese University of Hong Kong</strong><span>PhD</span></li>
-            <li><span class="mono">Now</span><strong>Microsoft Research Asia</strong><span>Senior Researcher</span></li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section page-width" id="publications" aria-labelledby="publications-title">
-      <div class="section-heading reading-width"><h2 id="publications-title">Selected publications</h2><a class="section-link" href="https://scholar.google.com/citations?user=qLj942EAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">&#8599;</span></a></div>
-      <div class="publication-content reading-width">
-      <div class="publication-heading"><h3 id="ml-papers">AI Systems</h3><p>* Students I advised</p></div>
-      <ol class="publication-list">
-        <li id="paper-prismem"><span class="pub-venue">PREPRINT</span><div><h4><a href="https://arxiv.org/abs/2610.06361">Capability-Driven Self-Evolution of Agent Memory</a></h4><p>Yaoqi Chen, Yuru Feng, Qianxi Zhang, <strong>Baotong Lu</strong>, Jianan Lu, Zhirui Wang, Shusen Xu, Zewen Jin, Zengzhong Li, Cheng Li, Qi Chen</p></div></li>
-        <li id="paper-mage"><span class="pub-venue">EMNLP 2026</span><div><h4><a href="https://arxiv.org/abs/2606.06090">Beyond Semantic Organization: Memory as Execution State Management for Long-Horizon Agents</a></h4><p>Yaoqi Chen, Haibin Lai, Yuru Feng, Chuyu Han, Qianxi Zhang, <strong>Baotong Lu</strong>, Menghao Li, Xinjiang Wang, Zewen Jin, Hao Wu, Cheng Li, Qi Chen</p></div></li>
-        <li id="paper-spin"><span class="pub-venue">PREPRINT</span><div><h4><a href="https://arxiv.org/abs/2604.26837">Unifying Sparse Attention with Hierarchical Memory for Scalable Long-Context LLM Serving</a></h4><p>Zihan Zhao*, <strong>Baotong Lu</strong>, Shengjie Lin*, Yizou Chen, Jing Liu, Yanqi Zhang, Ziming Miao, Ming-Chang Yang, Haiying Shen, Qi Chen, Fan Yang</p></div></li>
-        <li id="paper-dualspec"><span class="pub-venue">PREPRINT</span><div><h4><a href="https://arxiv.org/pdf/2603.07416">DualSpec: Accelerating Deep Research Agents via Dual-Process Action Speculation</a></h4><p>Shuzhang Zhong*, <strong>Baotong Lu</strong>, Qi Chen, Chuanjie Liu, Fan Yang, Meng Li</p></div></li>
-        <li id="paper-retroinfer"><span class="pub-venue">VLDB 2026</span><div><h4><a href="https://arxiv.org/pdf/2505.02922">RetroInfer: A Vector-Storage Engine for Scalable Long-Context LLM Inference</a></h4><p>Yaoqi Chen*, Jinkai Zhang*, <strong>Baotong Lu</strong>, Qianxi Zhang, Chengruidong Zhang, Jingjia Luo*, Di Liu, Huiqiang Jiang, Qi Chen, Jing Liu, Bailu Ding, Xiao Yan, Jiawei Jiang, Chen Chen, Mingxing Zhang, Yuqing Yang, Fan Yang, Mao Yang</p></div></li>
-        <li><span class="pub-venue">VLDB 2026</span><div><h4><a href="https://www.vldb.org/pvldb/vol19/p2727-oh.pdf">Aker: Density-Aware Approximate Caching for Vector Search</a></h4><p>Sukjoon Oh*, Minki Kang, Dohyun Kim, <strong>Baotong Lu</strong>, Jing Liu, Qianxi Zhang, Qi Chen, Youjip Won</p></div></li>
-        <li><span class="pub-venue">SIGMOD 2026</span><div><h4><a href="https://arxiv.org/pdf/2507.06653">Towards Efficient and Scalable Distributed Vector Search with RDMA</a></h4><p>Xiangyu Zhi, Meng Chen*, Xiao Yan, <strong>Baotong Lu</strong>, Hui Li, Qianxi Zhang, Qi Chen, James Cheng</p></div></li>
-        <li><span class="pub-venue">SIGMOD 2026</span><div><h4><a href="https://arxiv.org/pdf/2508.16263">Attribute Filtering in Approximate Nearest Neighbor Search: An In-depth Experimental Study</a></h4><p>Mocheng Li, Xiao Yan, <strong>Baotong Lu</strong>, Yue Zhang, James Cheng, Chenhao Ma</p></div></li>
-        <li><span class="pub-venue">PPoPP 2025</span><div><h4><a href="https://arxiv.org/pdf/2407.13996">SGDRC: Software-Defined Dynamic Resource Control for Concurrent DNN Inference on NVIDIA GPUs</a></h4><p>Yongkang Zhang, Haoxuan Yu, Chenxia Han, Cheng Wang, <strong>Baotong Lu</strong>, Yang Li, Xiaowen Chu, Huaicheng Li</p></div></li>
-        <li><span class="pub-venue">NeurIPS 2025</span><div><h4><a href="https://arxiv.org/pdf/2409.10516">RetrievalAttention: Accelerating Long-Context LLM Inference via Vector Retrieval</a></h4><p>Di Liu*, Meng Chen*, <strong>Baotong Lu</strong>, Huiqiang Jiang, Zhenhua Han, Qianxi Zhang, Qi Chen, Chengruidong Zhang, Bailu Ding, Kai Zhang, Chen Chen, Fan Yang, Yuqing Yang, LiLi Qiu</p><p class="pub-note">NeurIPS 2025 main track &middot; NeurIPS 2024 ENLSP Workshop <span class="award-tag">Best Paper Award</span></p></div></li>
-        <li><span class="pub-venue">AAAI 2020</span><div><h4><a href="https://arxiv.org/pdf/2001.02504">High Performance Depthwise and Pointwise Convolutions on Mobile Devices</a></h4><p>Pengfei Zhang, Eric Lo, <strong>Baotong Lu</strong></p></div></li>
-      </ol>
-      <div class="publication-heading"><h3 id="database-papers">Database Management Systems</h3></div>
-      <ol class="publication-list">
-        <li><span class="pub-venue">VLDB 2024</span><div><h4><a href="https://arxiv.org/pdf/2405.14502">DEX: Scalable Range Indexing on Disaggregated Memory</a></h4><p><strong>Baotong Lu</strong>, Kaisong Huang, Mike Chieh-Jan Liang, Tianzheng Wang, Eric Lo</p></div></li>
-        <li><span class="pub-venue">VLDB 2022</span><div><h4><a href="http://vldb.org/pvldb/vol15/p3004-wongkham.pdf">Are Updatable Learned Indexes Ready?</a></h4><p>Chaichon Wongkham, <strong>Baotong Lu</strong>, Chris Liu, Zhicong Zhong, Eric Lo, Tianzheng Wang</p></div></li>
-        <li id="paper-apex"><span class="pub-venue">VLDB 2022</span><div><h4><a href="https://arxiv.org/pdf/2105.00683">APEX: A High-Performance Learned Index on Persistent Memory</a></h4><p><strong>Baotong Lu</strong>, Jialin Ding, Eric Lo, Umar Faroop Minhas, Tianzheng Wang</p><p class="pub-note"><a href="http://nvmw.ucsd.edu/nvmw2022-program/nvmw2022-data/nvmw2022-paper26-final_version_your_extended_abstract.pdf">Abstract at NVMW 2022 &#8599;</a></p></div></li>
-        <li><span class="pub-venue">SIGMOD RECORD 2021</span><div><h4><a href="https://sigmodrecord.org/?smd_process_download=1&amp;download_id=7286">Scaling Dynamic Hash Tables on Real Persistent Memory</a></h4><p><strong>Baotong Lu</strong>, Xiangpeng Hao, Tianzheng Wang, Eric Lo</p><p class="pub-note">Volume 50, Issue 1 &middot; <a href="https://sigmodrecord.org/publications/sigmodRecord/2103/pdfs/21_tp-sdh-ross.pdf">Technical Perspective</a> from <a href="http://www.cs.columbia.edu/~kar/">Prof. Ken Ross</a></p></div></li>
-        <li><span class="pub-venue">VLDB 2020</span><div><h4><a href="http://www.vldb.org/pvldb/vol13/p1147-lu.pdf">Dash: Scalable Hashing on Persistent Memory</a></h4><p><strong>Baotong Lu</strong>, Xiangpeng Hao, Tianzheng Wang, Eric Lo</p><p class="pub-note"><a href="https://github.com/baotonglu/dash">Code &#8599;</a> &middot; <a href="http://nvmw.ucsd.edu/nvmw2021-program/nvmw2021-data/nvmw2021-paper21-final_version_your_extended_abstract.pdf">Abstract at NVMW 2021 &#8599;</a></p><p class="pub-note"><span class="award-tag">2021 ACM SIGMOD Research Highlight Award</span></p><p class="pub-note"><a href="https://dragonflydb.io/">DragonflyDB</a>'s <a href="https://github.com/dragonflydb/dragonfly">core hash table structure</a> is based on Dash.</p></div></li>
-      </ol>
-      </div>
-    </section>
-
-    <section class="section page-width service-section" id="service" aria-labelledby="service-title">
-      <div class="section-heading reading-width"><h2 id="service-title">Academic service</h2></div>
-        <div class="service-list reading-width">
-          <div class="service-row"><h3>Publications Chair</h3><p>SoCC 2026</p></div>
-          <div class="service-row"><h3>Program Committees</h3><p>SIGMOD 2027<br>VLDB 2027 (PVLDB 20), 2026 (PVLDB 19), 2025 (PVLDB 18)<br>EuroSys 2027, 2026 &middot; SoCC 2026<br>ICDE 2026 &middot; EDBT 2026 &middot; APSys 2025<br>ChinaSys 2025, 2024</p></div>
-          <div class="service-row"><h3>Editorial &amp; Reviewing</h3><p>Reviewer: ICLR 2027<br>VLDB Journal Reviewer Board, 2025&ndash;2026<br>SIGMOD Availability Committee 2023, 2022<br>Reviewer: VLDBJ, ACM TOS, IEEE TKDE, IEEE TCAD</p></div>
-          <details class="past-service"><summary>External reviewing</summary><p>SIGMOD 2024, ICDE 2024, SIGMOD 2022, ICDE 2022, VLDB 2021, SIGMOD 2021, ICDE 2021, EDBT 2021, ATC 2020, DASFAA 2019, VLDB 2018 (Demo)</p></details>
-        </div>
-    </section>
-
-    <section class="section page-width awards-section" aria-labelledby="awards-title">
-      <div class="section-heading reading-width"><h2 id="awards-title">Selected awards</h2></div>
-      <dl class="awards-list reading-width">
-        <div><dt>Best Paper Award, ENLSP Workshop @ NeurIPS</dt><dd>2024</dd></div>
-        <div><dt>ACM SIGMOD Research Highlight Award</dt><dd>2021</dd></div>
-        <div><dt>Mitacs Globalink Research Award</dt><dd>2022</dd></div>
-        <div><dt>China National Scholarship</dt><dd>2015, 2017</dd></div>
-      </dl>
     </section>
   </main>
   <footer class="site-footer page-width">
     <div class="footer-content reading-width">
       <div><p class="footer-title">Baotong Lu</p><p class="footer-affiliation">Microsoft Research Asia</p><a href="mailto:baotonglu@microsoft.com">baotonglu@microsoft.com <span aria-hidden="true">&#8599;</span></a></div>
-      <div class="footer-meta"><a href="https://scholar.google.com/citations?user=qLj942EAAAAJ&amp;hl=en">Google Scholar &#8599;</a><a href="https://github.com/baotonglu">GitHub &#8599;</a><a href="#home">Back to top &#8593;</a></div>
+      <div class="footer-meta"><a href="https://scholar.google.com/citations?user=qLj942EAAAAJ&amp;hl=en">Google Scholar &#8599;</a><a href="https://github.com/baotonglu">GitHub &#8599;</a><a href="#main">Back to top &#8593;</a></div>
     </div>
   </footer>
 </body>

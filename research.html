@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Baotong Lu's research in AI for Systems and Systems for AI, and research internship opportunities.">
+  <meta name="theme-color" content="#f6f3ed">
+  <title>Research | Baotong Lu</title>
+  <link rel="icon" href="photos/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/home.css">
+  <script src="js/home.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Baotong Lu, home">Baotong Lu<span class="wordmark-dot" aria-hidden="true"></span></a>
+    <nav aria-label="Main navigation">
+      <a href="about.html">About</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="service.html">Service</a>
+    </nav>
+    <a class="header-contact" href="mailto:baotonglu@microsoft.com">Get in touch <span aria-hidden="true">&#8599;</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero page-width" id="research" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Research at the intersection of AI and systems</p>
+        <h1 id="hero-title">Research</h1>
+        <p class="hero-focus">AI for Systems. Systems for AI.</p>
+        <p class="hero-intro">I explore how advances in systems can enable better AI, and how advances in AI can reshape the way we build and operate systems.</p>
+      </div>
+      <figure class="hero-figure" aria-labelledby="landscape-caption">
+        <div class="landscape-stages" aria-hidden="true">
+          <div>Long-context inference<span>Sparse access</span></div>
+          <div>Hierarchical memory<span>Storage &amp; retrieval</span></div>
+          <div>Agent memory<span>Capability-driven evolution</span></div>
+        </div>
+        <div id="landscape-visual">
+          <svg class="landscape-desktop" viewBox="0 0 1200 370" role="img" aria-labelledby="landscape-title landscape-desc">
+            <title id="landscape-title">From context to memory to more capable agents</title>
+            <desc id="landscape-desc">A conceptual map of three related research directions. Sparse access selects from a large context; a hierarchy of memory tiers connects storage and computation; capability specialists contribute to an evolving agent memory program.</desc>
+            <defs>
+              <pattern id="landscape-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0 H0 V32" fill="none" stroke="#deded4" stroke-width=".6"/></pattern>
+              <pattern id="context-cells" width="25" height="25" patternUnits="userSpaceOnUse"><rect x="4" y="4" width="15" height="15" rx="2" fill="#e1e4d9" stroke="#a8b49c" stroke-width=".7"/></pattern>
+              <pattern id="memory-cells" width="24" height="26" patternUnits="userSpaceOnUse"><path d="M0 0 V26" stroke="#a2af9a" stroke-width=".7"/></pattern>
+              <linearGradient id="landscape-fade"><stop offset="0" stop-color="white" stop-opacity="0"/><stop offset=".08" stop-color="white"/><stop offset=".92" stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient>
+              <mask id="landscape-mask"><rect width="1200" height="370" fill="url(#landscape-fade)"/></mask>
+            </defs>
+            <g mask="url(#landscape-mask)">
+              <rect width="1200" height="370" fill="url(#landscape-grid)"/>
+              <g class="landscape-traces">
+                <path d="M0 96 C55 96 45 115 75 115 M0 128 C55 128 45 140 75 140 M0 160 H75 M0 192 C55 192 45 190 75 190 M0 224 C55 224 45 215 75 215 M0 256 C55 256 45 240 75 240"/>
+                <path d="M225 115 C270 115 255 157 303 157 M225 140 C265 140 270 170 303 170 M225 165 H303 M225 190 H303 M225 215 C270 215 270 198 303 198 M225 240 C270 240 260 211 303 211"/>
+                <path d="M349 184 C420 184 420 125 505 125 M349 184 C420 184 420 196 470 196 M349 184 C420 184 390 278 440 278"/>
+                <path d="M695 125 C760 125 745 184 800 184 M730 196 C765 196 765 184 800 184 M760 278 C795 278 760 184 800 184"/>
+                <path d="M800 184 C860 184 845 88 918 88 L1008 184 L918 280 C845 280 860 184 800 184 M800 184 H1008 M918 88 V280 M1008 184 H1200"/>
+                <path d="M1110 224 C1110 350 326 350 326 242"/>
+              </g>
+              <rect x="75" y="100" width="150" height="150" fill="url(#context-cells)"/>
+              <g class="selected-cells"><rect x="104" y="104" width="15" height="15" rx="2"/><rect x="179" y="129" width="15" height="15" rx="2"/><rect x="129" y="179" width="15" height="15" rx="2"/><rect x="204" y="204" width="15" height="15" rx="2"/><rect x="79" y="229" width="15" height="15" rx="2"/></g>
+              <rect class="query-gate" x="303" y="144" width="46" height="80" rx="3"/>
+              <path d="M314 164 H338 M314 184 H338 M314 204 H338" stroke="#b48164" stroke-width="1.5"/>
+              <g class="memory-tiers">
+                <rect x="505" y="104" width="190" height="42" rx="2"/>
+                <rect x="470" y="167" width="260" height="58" rx="2"/>
+                <rect x="440" y="249" width="320" height="58" rx="2"/>
+              </g>
+              <rect x="515" y="112" width="170" height="26" fill="url(#memory-cells)"/>
+              <rect x="480" y="183" width="240" height="26" fill="url(#memory-cells)"/>
+              <rect x="450" y="265" width="300" height="26" fill="url(#memory-cells)"/>
+              <rect class="memory-active" x="563" y="112" width="24" height="26" rx="1"/>
+              <rect class="memory-active" x="624" y="183" width="24" height="26" rx="1"/>
+              <rect class="memory-active" x="528" y="265" width="24" height="26" rx="1"/>
+              <g class="landscape-specialists"><circle cx="918" cy="88" r="17"/><circle cx="918" cy="184" r="17"/><circle cx="918" cy="280" r="17"/></g>
+              <path class="agent-program" d="M1008 157 L1035 184 L1008 211 L981 184 Z"/>
+              <path d="M1000 184 H1016 M1008 176 V192" stroke="#f6f3ed" stroke-width="1.5"/>
+              <path class="flow-line flow-orange" pathLength="1000" d="M0 128 C55 128 45 140 75 140 H185 C265 140 270 170 326 184 C420 184 420 125 600 125 H695 C760 125 745 184 800 184 C860 184 845 88 918 88 L1008 184 H1200"/>
+              <path class="flow-line flow-green" pathLength="1000" d="M0 224 C55 224 45 215 75 215 H210 C270 215 270 198 326 184 C420 184 390 278 600 278 H760 C795 278 760 184 800 184 C860 184 845 280 918 280 L1008 184 H1200"/>
+              <path class="flow-line flow-blue" pathLength="1000" d="M1110 224 C1110 350 326 350 326 242"/>
+            </g>
+          </svg>
+          <svg class="landscape-mobile" viewBox="0 0 360 660" role="img" aria-labelledby="mobile-landscape-title mobile-landscape-desc">
+            <title id="mobile-landscape-title">Context, memory, and agents</title>
+            <desc id="mobile-landscape-desc">Three related research directions, arranged vertically: sparse attention for long-context inference, hierarchical memory for storage and retrieval, and capability-driven evolution of agent memory.</desc>
+            <defs><pattern id="mobile-context" width="24" height="24" patternUnits="userSpaceOnUse"><rect x="3" y="3" width="14" height="14" rx="2" fill="#e1e4d9" stroke="#a8b49c" stroke-width=".7"/></pattern></defs>
+            <text class="landscape-mobile-title" x="16" y="30">Long-context inference</text>
+            <text class="landscape-mobile-label" x="16" y="56">Sparse access</text>
+            <rect x="36" y="78" width="144" height="96" fill="url(#mobile-context)"/>
+            <g class="selected-cells"><rect x="51" y="99" width="14" height="14" rx="2"/><rect x="123" y="123" width="14" height="14" rx="2"/></g>
+            <g class="landscape-traces"><path d="M180 96 C210 96 205 124 240 124 M180 148 C210 148 205 124 240 124 M270 124 H318 C342 124 342 285 270 285 H180 V302"/></g>
+            <rect class="query-gate" x="240" y="104" width="30" height="40" rx="2"/>
+            <text class="landscape-mobile-title" x="16" y="250">Hierarchical memory</text>
+            <text class="landscape-mobile-label" x="16" y="276">Storage &amp; retrieval</text>
+            <g class="memory-tiers"><rect x="115" y="300" width="130" height="22" rx="2"/><rect x="85" y="334" width="190" height="22" rx="2"/><rect x="55" y="368" width="250" height="22" rx="2"/></g>
+            <path class="landscape-traces" d="M180 322 V334 M180 356 V368 M180 390 V434 H318 C342 434 342 563 280 563"/>
+            <text class="landscape-mobile-title" x="16" y="470">Agent memory</text>
+            <text class="landscape-mobile-label" x="16" y="496">Capability-driven evolution</text>
+            <path class="landscape-traces" d="M50 565 L150 525 L260 565 L150 615 Z M150 525 V615 M260 565 V644 H344 V190 H300"/>
+            <g class="landscape-specialists"><circle cx="150" cy="525" r="12"/><circle cx="150" cy="615" r="12"/></g>
+            <circle class="memory-active" cx="50" cy="565" r="7"/>
+            <path class="agent-program" d="M260 546 L279 565 L260 584 L241 565 Z"/>
+            <path class="flow-line flow-orange" pathLength="1000" d="M65 106 H180 C210 106 205 124 255 124 H318 C342 124 342 285 270 285 H180 V390 V434 H318 C342 434 342 563 260 565 L150 525"/>
+            <path class="flow-line flow-green" pathLength="1000" d="M150 615 L260 565 V644 H344 V190 H300"/>
+          </svg>
+        </div>
+        <div class="figure-footer">
+          <figcaption id="landscape-caption">A conceptual view of my research: making context accessible, memory scalable, and agents more capable.</figcaption>
+          <button class="motion-toggle" type="button" aria-controls="landscape-visual" aria-pressed="false" hidden>Pause animations</button>
+        </div>
+      </figure>
+    </section>
+
+    <section class="section page-width" aria-label="Research interests and internships">
+      <div class="research-directions reading-width">
+        <p><strong>Systems for AI.</strong> Designing systems that enable more capable, efficient, and scalable AI.</p>
+        <p><strong>AI for Systems.</strong> Using AI to rethink how systems are designed, built, and operated.</p>
+      </div>
+      <aside class="intern-note reading-width"><p><strong>Research internships</strong><mark class="intern-highlight">I am seeking research interns interested in AI and systems.</mark> <a href="mailto:baotonglu@microsoft.com">Get in touch by email <span aria-hidden="true">&#8599;</span></a></p></aside>
+    </section>
+
+  </main>
+  <footer class="site-footer page-width">
+    <div class="footer-content reading-width">
+      <div><p class="footer-title">Baotong Lu</p><p class="footer-affiliation">Microsoft Research Asia</p><a href="mailto:baotonglu@microsoft.com">baotonglu@microsoft.com <span aria-hidden="true">&#8599;</span></a></div>
+      <div class="footer-meta"><a href="https://scholar.google.com/citations?user=qLj942EAAAAJ&amp;hl=en">Google Scholar &#8599;</a><a href="https://github.com/baotonglu">GitHub &#8599;</a><a href="#main">Back to top &#8593;</a></div>
+    </div>
+  </footer>
+</body>
+</html>

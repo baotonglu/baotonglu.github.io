@@ -5,7 +5,11 @@ Systems for AI. No build step or external runtime dependencies are required.
 
 ## Editing
 
-- `index.html`: biography, research, publications, service, and awards.
+- `index.html`: short introduction and profile links.
+- `about.html`: biography, academic background, and awards.
+- `research.html`: research directions, landscape illustration, and internships.
+- `publications.html`: selected publications.
+- `service.html`: academic service.
 - `css/home.css`: editorial layout, responsive reading widths, and the research
   landscape animation.
 - `js/home.js`: the optional animation pause/resume control.
@@ -13,14 +17,18 @@ Systems for AI. No build step or external runtime dependencies are required.
 - `fonts/`: self-hosted Inter variable font and its SIL Open Font License.
   Source: https://github.com/rsms/inter.
 
-Edit `index.html` directly. The legacy `index.jemdoc` is not the source of the
-current homepage; running jemdoc against it will overwrite the homepage with
-outdated content. Existing project pages and legacy styles remain independent.
+Edit the corresponding HTML page directly. Each page shares the same navigation;
+keep its links consistent and mark the current page with `aria-current="page"`.
+The name in the header links back to `index.html`. The legacy `index.jemdoc` is
+not the source of the current homepage; running jemdoc against it will overwrite
+the homepage with outdated content. Existing project pages and legacy styles
+remain independent.
 
 Open `index.html` in a browser, or serve this directory with any static HTTP
 server. All homepage content and navigation work without JavaScript. Animations
 respect the system's reduced-motion preference and can also be paused using the
-control below the opening diagram. Without JavaScript, the diagram is static.
+control below the diagram on `research.html`. Without JavaScript, the diagram is
+static.
 
 Typography is defined by the reading, detail, and metadata size variables in
 `css/home.css`. Keep narrative copy at 18-20px and publication authors and other
