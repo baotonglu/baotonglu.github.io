@@ -5,9 +5,9 @@ Systems for AI. No build step or external runtime dependencies are required.
 
 ## Editing
 
-- `index.html`: short introduction and profile links.
+- `index.html`: short introduction, profile links, and research internships.
 - `about.html`: biography, academic background, and awards.
-- `research.html`: research directions, landscape illustration, and internships.
+- `research.html`: research directions and landscape illustration.
 - `publications.html`: selected publications.
 - `service.html`: academic service.
 - `css/home.css`: editorial layout, responsive reading widths, and the research
@@ -39,7 +39,7 @@ do not shrink reading text at mobile breakpoints.
 The opening landscape is a conceptual map of related research directions, not
 an architecture diagram of a combined system. Desktop and mobile have separate
 SVG compositions so labels remain legible instead of scaling a wide figure down.
-The research section contains only the two broad research directions and the
-highlighted internship notice; individual papers are listed under publications.
+The research section contains the two broad research directions; the highlighted
+internship notice is on the homepage. Individual papers are listed under publications.
 Keep these sections on the shared reading column, with the wider layout reserved
 for the opening research illustration.
